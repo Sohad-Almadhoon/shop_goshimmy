@@ -12,9 +12,10 @@ export default {
         'dance-pattern': "url('/images/dance-pattern.jpg')",
       },
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
-        primary:'#5E6DF1'
+        primary: '#5E6DF1',
+        primary_bold: '#5E6DF1',
+        primary_light:'#8A96FF'
+
       },
     },
   },
