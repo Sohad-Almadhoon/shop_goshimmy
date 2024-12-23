@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Header from "./components/shared/Header";
 
 export default function Home() {
@@ -83,6 +84,24 @@ export default function Home() {
 
         <div className="flex-1">
           <img src="/images/section2.png" className="object-cover" />
+        </div>
+      </section>
+      <section className="flex lg:flex-row flex-col lg:mx-24 mx-10 my-12 gap-12">
+        <div className="flex-1">
+          <img
+            src="/images/section3.png"
+            alt=""
+            className="h-80 w-full rounded-2xl object-cover"
+          />
+          <span className="text-primary font-bold mt-6">Shop Costumes</span>
+        </div>
+        <div className="flex-1">
+          <img
+            src="/images/section31.png"
+            alt=""
+            className="h-80 w-full rounded-2xl object-cover"
+          />
+          <span className="text-primary  font-bold mt-6">Shop Rehearsal Wear</span>
         </div>
       </section>
     </div>

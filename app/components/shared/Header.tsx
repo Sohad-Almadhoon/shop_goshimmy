@@ -5,7 +5,7 @@ import CustomInput from "./CustomInput";
 import { BiBell, BiCart, BiSearch } from "react-icons/bi";
 const Header = () => {
   return (
-    <header className="lg:px-24 px-8 py-8 lg:py-12">
+    <header className="lg:px-24 px-8 py-8 lg:py-3">
       <div className="flex justify-between lg:items-center lg:flex-row flex-col lg:gap-12 gap-3 py-2">
         <div className="flex items-start flex-col ">
           <span className="text-primary text-3xl font-bold">Go Shimmy</span>
