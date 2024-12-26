@@ -93,7 +93,7 @@ export default function Home() {
             alt=""
             className="h-80 w-full rounded-2xl object-cover"
           />
-          <span className="text-primary font-bold mt-6">Shop Costumes</span>
+          <p className="text-primary font-bold mt-3">Shop Costumes</p>
         </div>
         <div className="flex-1">
           <img
@@ -101,7 +101,31 @@ export default function Home() {
             alt=""
             className="h-80 w-full rounded-2xl object-cover"
           />
-          <span className="text-primary  font-bold mt-6">Shop Rehearsal Wear</span>
+          <p className="text-primary  font-bold mt-3">Shop Rehearsal Wear</p>
+        </div>
+      </section>
+      <section className="flex px-24">
+        <div className="flex-1 mx-auto flex justify-center items-center">
+          <img
+            src="/images/section5.png"
+            alt=""
+            className="rounded-full size-80 object-cover"
+          />
+        </div>
+        <div className="flex-1 flex flex-col justify-center">
+          <h3 className="font-bold"> By dancers, for dancers:</h3>
+          <p className="max-w-md text-sm my-5">
+            {" "}
+            “Over the years, I have begun to understand the collective strength
+            and power the dance community has to make a difference in the world.
+            We are a community of passionate teachers, mentors, students,
+            colleagues, creators, and friends. I believe we have the power to
+            make a positive impact on our environment and our future. GoShimmy
+            is a platform that allows us, as a dance community, to connect,
+            re-use, and give back.
+          </p>
+          <h4 className="text-sm font-bold"> Jen Bradford</h4>
+          <span className="text-sm font-bold"> Founder & CEO</span>
         </div>
       </section>
     </div>
