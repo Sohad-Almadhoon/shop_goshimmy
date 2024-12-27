@@ -29,8 +29,8 @@ const Header = () => {
         </div>
       </div>
       <hr />
-      <div className="flex lg:justify-between items-center lg:flex-row flex-col mt-2">
-        <div className="flex items-center gap-3 lg:text-inherit text-sm  mb-3 lg:m-0 ">
+      <div className="flex lg:flex-row lg:justify-between flex-col mt-2">
+        <div className="flex items-start font-semibold  lg:flex-row flex-col gap-3 lg:text-inherit text-sm  mb-3 lg:m-0 ">
           <Link href="/about">New Arrivals</Link>
           <Link href="/about">Rehearsal Wear</Link>
           <Link href="/about">Costumes</Link>
@@ -38,7 +38,8 @@ const Header = () => {
           <Link href="/about">Accessories</Link>
           <Link href="/about">Shop all</Link>
         </div>
-        <div className="flex items-center gap-3 lg:text-inherit text-sm">
+        <hr className="my-4 lg:hidden block"/>
+        <div className="flex  lg:flex-row font-semibold lg:items-center items-start flex-col gap-3 lg:text-inherit text-sm">
           <Link href="/about" className="text-primary">
             Ensemble Membership
           </Link>
@@ -47,7 +48,7 @@ const Header = () => {
           </Link>
           <Link
             href="/about"
-            className="bg-primary text-white p-1 px-8 rounded-2xl">
+            className="bg-primary lg:w-fit w-full text-white text-center p-2 px-8 rounded-2xl">
             Sell
           </Link>
         </div>

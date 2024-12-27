@@ -1,5 +1,6 @@
-import Image from "next/image";
 import Header from "./components/shared/Header";
+import { BiLogoApple } from "react-icons/bi";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -22,7 +23,7 @@ export default function Home() {
       </main>
       <section className="lg:mx-24 mx-5 my-10">
         <h3 className="mb-3 font-medium text-xl">Shop by genre</h3>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
           {[
             "Ballet",
             "Hip hop",
@@ -104,7 +105,7 @@ export default function Home() {
           <p className="text-primary  font-bold mt-3">Shop Rehearsal Wear</p>
         </div>
       </section>
-      <section className="flex px-24">
+      <section className="flex px-24 lg:flex-row flex-col lg:gap-0 gap-4">
         <div className="flex-1 mx-auto flex justify-center items-center">
           <img
             src="/images/section5.png"
@@ -126,6 +127,126 @@ export default function Home() {
           </p>
           <h4 className="text-sm font-bold"> Jen Bradford</h4>
           <span className="text-sm font-bold"> Founder & CEO</span>
+        </div>
+      </section>
+      <section className="flex my-16 lg:flex-row flex-col px-36 justify-center gap-6">
+        <div className="flex flex-col flex-1">
+          <img
+            src="/images/section7.png"
+            alt=""
+            className="rounded-2xl h-60 object-cover"
+          />
+          <h3 className="font-bold mt-4">Give Back, Pay It Forward</h3>
+          <p className="text-xs max-w-md">
+            We believe in a world where everyone has access to the joy that art
+            brings. A portion of every sale is donated to non-profit
+            organizations creating change in the lives of children and teens,
+            through dance, music, and art. Learn more about the organizations
+            you support by being a part of GoShimmy here.
+          </p>
+        </div>
+        <div className="flex flex-col flex-1">
+          <img
+            src="/images/section6.png"
+            alt=""
+            className="rounded-2xl h-60 object-cover"
+          />
+          <h3 className="font-bold mt-4">Good for our planet, good for us</h3>
+          <p className="text-xs max-w-md">
+            Second to oil, the clothing and textile industry is the largest
+            polluter in the world. There are millions of beautiful costumes,
+            rehearsal essentials, and one-of-a-kind pieces already created and
+            waiting to be loved again – join us in creating a more sustainable
+            future. Learn more
+          </p>
+        </div>
+      </section>
+      <section className="bg-primary_light flex h-[250px] my-20 mx-36 rounded-lg">
+        <div className="text-white flex-2 px-24 flex gap-5 flex-col justify-center">
+          <h3 className="text-2xl">Get the app</h3>
+          <p className="text-sm">Shop and sell dancewear from anywhere.</p>
+          <div className="bg-black px-4 py-1 gap-2 items-center w-fit flex text-white rounded-xl shadow-md ">
+            <BiLogoApple className="text-2xl" />
+            <div className="text-[8px]">
+              Download on the
+              <p className="font-bold text-xs">App Store</p>
+            </div>
+          </div>
+        </div>
+        <div className="flex-1">
+          <img
+            src="/images/section6.png"
+            alt=""
+            className="h-full w-full object-cover rounded-tr-lg rounded-br-lg"
+          />
+        </div>
+      </section>
+      <hr className="mx-36 mb-5"/>
+      <section className="mx-36 grid lg:grid-cols-4 sm:grid-cols-2 grid-cols-1  pb-12 ">
+        <div className="flex flex-col">
+          <h3 className="font-bold mb-3"> Shop Genres</h3>
+          {[
+            "Ballet",
+            "Ballroom",
+            " Belly Dance",
+            "Character",
+            "Cheerleading / Dance Team",
+            "Contemporary / Lyrical / Modern",
+            "Figure Skating",
+            "Folk / Cultural Dance",
+            " Hip Hop / Street Styles",
+            "Holiday",
+            "Jazz",
+            "Tap",
+          ].map((item) => (
+            <Link href="/">{item}</Link>
+          ))}
+        </div>
+        <div className="flex flex-col">
+          <h3 className="font-bold mb-3"> Shop Categories</h3>
+          {[
+            "Leotards",
+            "Unitards",
+            "Dresses ",
+            "Two-Piece Sets & Suits",
+            "Jackets& Coats",
+            "Shirts & Tops",
+            "Skirts & Tutus",
+            "Pants & Leggings",
+            "Shorts",
+            "Warm-ups",
+            "Tights",
+            "Shoes",
+            "Accessories",
+          ].map((item) => (
+            <Link href="/">{item}</Link>
+          ))}
+        </div>
+        <div className="flex flex-col">
+          <h3 className="font-bold mb-3"> Support</h3>
+          {[
+            "FAQ",
+            " How It Works",
+            " Ensemble Membership",
+            " Returns & Shipping",
+            "How To Ship a Tutu",
+            "GoShimmy Guarantee",
+          ].map((item) => (
+            <Link href="/">{item}</Link>
+          ))}
+        </div>
+        <div className="flex flex-col">
+          <h3 className="font-bold mb-3"> Company</h3>
+          {[
+            "About Us",
+            "Our Partnerships",
+            "Terms of Service",
+            "Privacy Policy",
+            " Accessibility",
+            "Contact Us",
+          ].map((item) => (
+            <Link href="/">{item}</Link>
+          ))}
         </div>
       </section>
     </div>
