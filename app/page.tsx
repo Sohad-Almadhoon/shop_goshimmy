@@ -1,26 +1,27 @@
 import Header from "./components/shared/Header";
 import { BiLogoApple } from "react-icons/bi";
 import Link from "next/link";
+import Footer from "./components/shared/Footer";
 
 export default function Home() {
   return (
     <div>
       <Header />
 
-      <main className="py-16 text-white bg-dance-pattern bg-cover bg-center bg-no-repeat">
-        <h3 className="ml-24 text-3xl font-bold max-w-lg">
+      <section className="py-16 text-white bg-dance-pattern bg-cover bg-center bg-no-repeat">
+        <h3 className="lg:ml-24 ml-10 text-3xl font-bold max-w-lg">
           Shop the closets and costume collections of dancers everywhere.
         </h3>
-        <p className="ml-24 mb-5 max-w-sm w-full text-xs text-[#FFFFFF] text-opacity-80 mt-4">
+        <p className="lg:ml-24 ml-10 mb-5 max-w-sm w-full text-xs text-[#FFFFFF] text-opacity-80 mt-4">
           Welcome to GoShimmy! Join a community of dancers, teachers, parents,
           studio owners, directors, & choreographers coming together to
           reimagine how the dance world shops. Buy or sell new, gently used, and
           one-of-a-kind costumes, rehearsal wear, and essentials.
         </p>
-        <span className="ml-24  mt-12 cursor-pointer bg-primary text-white p-2 px-5 rounded-2xl">
+        <span className="lg:ml-24  ml-10 mt-12 cursor-pointer bg-primary text-white p-2 px-5 rounded-2xl">
           Shop now
         </span>
-      </main>
+      </section>
       <section className="lg:mx-24 mx-5 my-10">
         <h3 className="mb-3 font-medium text-xl">Shop by genre</h3>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
@@ -129,7 +130,7 @@ export default function Home() {
           <span className="text-sm font-bold"> Founder & CEO</span>
         </div>
       </section>
-      <section className="flex my-16 lg:flex-row flex-col px-36 justify-center gap-6">
+      <section className="flex my-16 lg:flex-row flex-col px-10 lg:px-36 justify-center gap-6">
         <div className="flex flex-col flex-1">
           <img
             src="/images/section7.png"
@@ -161,8 +162,8 @@ export default function Home() {
           </p>
         </div>
       </section>
-      <section className="bg-primary_light flex h-[250px] my-20 mx-36 rounded-lg">
-        <div className="text-white flex-2 px-24 flex gap-5 flex-col justify-center">
+      <section className="bg-primary_light flex lg:flex-row flex-col lg:h-[250px] my-20 lg:mx-36 mx-10 rounded-lg">
+        <div className="text-white flex-2 p-5 lg:px-24 flex gap-5 flex-col justify-center">
           <h3 className="text-2xl">Get the app</h3>
           <p className="text-sm">Shop and sell dancewear from anywhere.</p>
           <div className="bg-black px-4 py-1 gap-2 items-center w-fit flex text-white rounded-xl shadow-md ">
@@ -181,74 +182,8 @@ export default function Home() {
           />
         </div>
       </section>
-      <hr className="mx-36 mb-5"/>
-      <section className="mx-36 grid lg:grid-cols-4 sm:grid-cols-2 grid-cols-1  pb-12 ">
-        <div className="flex flex-col">
-          <h3 className="font-bold mb-3"> Shop Genres</h3>
-          {[
-            "Ballet",
-            "Ballroom",
-            " Belly Dance",
-            "Character",
-            "Cheerleading / Dance Team",
-            "Contemporary / Lyrical / Modern",
-            "Figure Skating",
-            "Folk / Cultural Dance",
-            " Hip Hop / Street Styles",
-            "Holiday",
-            "Jazz",
-            "Tap",
-          ].map((item) => (
-            <Link href="/">{item}</Link>
-          ))}
-        </div>
-        <div className="flex flex-col">
-          <h3 className="font-bold mb-3"> Shop Categories</h3>
-          {[
-            "Leotards",
-            "Unitards",
-            "Dresses ",
-            "Two-Piece Sets & Suits",
-            "Jackets& Coats",
-            "Shirts & Tops",
-            "Skirts & Tutus",
-            "Pants & Leggings",
-            "Shorts",
-            "Warm-ups",
-            "Tights",
-            "Shoes",
-            "Accessories",
-          ].map((item) => (
-            <Link href="/">{item}</Link>
-          ))}
-        </div>
-        <div className="flex flex-col">
-          <h3 className="font-bold mb-3"> Support</h3>
-          {[
-            "FAQ",
-            " How It Works",
-            " Ensemble Membership",
-            " Returns & Shipping",
-            "How To Ship a Tutu",
-            "GoShimmy Guarantee",
-          ].map((item) => (
-            <Link href="/">{item}</Link>
-          ))}
-        </div>
-        <div className="flex flex-col">
-          <h3 className="font-bold mb-3"> Company</h3>
-          {[
-            "About Us",
-            "Our Partnerships",
-            "Terms of Service",
-            "Privacy Policy",
-            " Accessibility",
-            "Contact Us",
-          ].map((item) => (
-            <Link href="/">{item}</Link>
-          ))}
-        </div>
-      </section>
+      <hr className="lg:mx-36 mb-5" />
+      <Footer/>
     </div>
   );
 }
