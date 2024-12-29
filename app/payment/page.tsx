@@ -13,7 +13,7 @@ const Payment = () => {
   return (
     <div className="bg-dance-pattern min-h-screen flex justify-center items-center">
       <div className="bg-white shadow-lg max-w-md rounded-xl text-center py-9 px-8">
-        <PaymentHeader />
+        <PaymentHeader step={step} />
         {/* Step 1: Personal Info */}
         {step === 1 && (
           <div>

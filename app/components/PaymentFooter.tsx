@@ -1,4 +1,5 @@
 import React from "react";
+import CustomButton from "./shared/CustomButton";
 
 interface PaymentFooterProps {
   step: number;
@@ -15,20 +16,12 @@ const PaymentFooter: React.FC<PaymentFooterProps> = ({ step, onBack, onNext }) =
           <span className="text-primary">terms of service</span>.
         </p>
       ) : (
-        <button className="px-4 py-2 bg-gray-300 rounded" onClick={onBack}>
-          Back
-        </button>
+      <CustomButton text="Back" onClick={onBack} />
       )}
       {step < 3 ? (
-        <button
-          className="px-4 py-2 bg-blue-500 text-white rounded"
-          onClick={onNext}>
-          Next
-        </button>
+       <CustomButton text="Next" onClick={onNext} />
       ) : (
-        <button className="px-4 py-2 bg-green-500 text-white rounded">
-          Save
-        </button>
+        <CustomButton text="Save" onClick={onNext} />
       )}
     </div>
   );

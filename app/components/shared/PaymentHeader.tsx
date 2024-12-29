@@ -1,20 +1,41 @@
 import React from "react";
 import { HiOutlineArrowLongRight } from "react-icons/hi2";
 
-const PaymentHeader = () => {
+interface PaymentHeaderProps {
+  step: number;
+}
+
+const PaymentHeader: React.FC<PaymentHeaderProps> = ({ step }) => {
+  const isActive = (currentStep:number) => step === currentStep;
+
   return (
     <div className="flex items-center mb-10">
-      <span className="bg-primary lg:w-fit w-full text-white text-center p-2 px-8 rounded-2xl">
+      <div
+        className={`lg:w-fit w-full text-center p-2 px-8 rounded-2xl ${
+          isActive(1)
+            ? "bg-primary text-white"
+            : "border-2 border-gray-500 text-gray-500"
+        }`}>
         Profile
-      </span>
+      </div>
       <HiOutlineArrowLongRight className="w-14 h-10 text-gray-500" />
-      <span className="bg-primary lg:w-fit w-full whitespace-nowrap text-white text-center p-2 px-8 rounded-2xl">
+      <div
+        className={`lg:w-fit whitespace-nowrap w-full text-center p-2 px-8 rounded-2xl ${
+          isActive(2)
+            ? "bg-primary text-white"
+            : "border-2 border-gray-500 text-gray-500"
+        }`}>
         Studio Info
-      </span>
+      </div>
       <HiOutlineArrowLongRight className="w-14 h-10 text-gray-500" />
-      <span className="bg-primary lg:w-fit w-full text-white text-center p-2 px-8 rounded-2xl">
+      <div
+        className={`lg:w-fit w-full text-center p-2 px-8 rounded-2xl ${
+          isActive(3)
+            ? "bg-primary text-white"
+            : "border-2 border-gray-500 text-gray-500"
+        }`}>
         Payment
-      </span>
+      </div>
     </div>
   );
 };
