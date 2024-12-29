@@ -5,9 +5,9 @@ const MembershipPage = () => {
 
   return (
     <div>
-      <div className="flex">
+      <div className="grid lg:grid-cols-4 grid-cols-2">
         {["section2", "section3", "section5", "section6"].map((item) => (
-          <div className="flex-1">
+          <div className="">
             <img src={`/images/${item}.png`} alt="img" className="h-full" />
           </div>
         ))}

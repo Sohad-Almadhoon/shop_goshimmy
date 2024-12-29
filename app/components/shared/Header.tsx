@@ -1,5 +1,3 @@
-"use client";
-
 import Link from "next/link";
 import CustomInput from "./CustomInput";
 import { BiBell, BiCart, BiSearch } from "react-icons/bi";
@@ -40,14 +38,14 @@ const Header = () => {
         </div>
         <hr className="my-4 lg:hidden block"/>
         <div className="flex  lg:flex-row font-semibold lg:items-center items-start flex-col gap-3 lg:text-inherit text-sm">
-          <Link href="/about" className="text-primary">
+          <Link href="/membership" className="text-primary">
             Ensemble Membership
           </Link>
           <Link href="/about" className="text-primary">
             How It Works
           </Link>
           <Link
-            href="/membership"
+            href="/payment"
             className="bg-primary lg:w-fit w-full text-white text-center p-2 px-8 rounded-2xl">
             Sell
           </Link>

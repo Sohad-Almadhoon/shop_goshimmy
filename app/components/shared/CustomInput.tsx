@@ -1,4 +1,3 @@
-"use client";
 import { forwardRef } from "react";
 import { twMerge } from "tailwind-merge";
 
@@ -11,11 +10,11 @@ const CustomInput = forwardRef<HTMLInputElement, InputProps>(
       <input
         type={type}
         className={twMerge(
-          "outline-none rounded-lg bg-inherit px-16 py-2 ",
+          "outline-none rounded-lg bg-inherit  py-2 px-4 w-full",
           className
         )}
         disabled={disabled}
-        ref={ref} // Properly forward the ref
+        ref={ref}
         {...props}
       />
     );
