@@ -1,13 +1,10 @@
 import Header from "./components/shared/Header";
 import { BiLogoApple } from "react-icons/bi";
-import Link from "next/link";
 import Footer from "./components/shared/Footer";
 
 export default function Home() {
   return (
     <div>
-      <Header />
-
       <section className="py-16 text-white bg-dance-pattern bg-cover bg-center bg-no-repeat">
         <h3 className="lg:ml-24 ml-10 text-3xl font-bold max-w-lg">
           Shop the closets and costume collections of dancers everywhere.
@@ -182,8 +179,6 @@ export default function Home() {
           />
         </div>
       </section>
-      <hr className="lg:mx-36 mb-5" />
-      <Footer/>
     </div>
   );
 }

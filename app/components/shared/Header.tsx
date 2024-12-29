@@ -47,7 +47,7 @@ const Header = () => {
             How It Works
           </Link>
           <Link
-            href="/about"
+            href="/membership"
             className="bg-primary lg:w-fit w-full text-white text-center p-2 px-8 rounded-2xl">
             Sell
           </Link>
