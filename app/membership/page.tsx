@@ -23,15 +23,16 @@ const MembershipPage = () => {
       <section className="lg:mx-56 mx-12 lg:gap-0  gap-5 flex my-12 lg:flex-row flex-col">
         <ul className="flex flex-col gap-3 list-disc flex-1">
           {membership.map((item) => (
-            <li className="flex flex-col">
+            <li className="flex flex-col before:content-['✔'] before:mr-2 before:text-green-500 before:flex-shrink-0">
               <span className="font-bold">{item.title}</span>
               <span className="max-w-md text-sm font-semibold text-opacity-60">
-                {item.decription}
+                {item.description}
               </span>
             </li>
           ))}
         </ul>
-        <div className="bg-slate-300 max-w-md rounded-2xl flex-1 h-fit p-16 gap-3 flex flex-col justify-center items-center">
+
+        <div className="bg-[#EFF0F6] max-w-md rounded-2xl flex-1 h-fit p-16 gap-3 flex flex-col justify-center items-center">
           <span className="text-2xl"> Membership fee</span>
           <p>
             <span className="text-primary text-3xl font-bold">$11</span>{" "}
@@ -60,7 +61,7 @@ const MembershipPage = () => {
                   alt="img"
                   className="h-48 lg:w-72 w-full object-cover rounded-2xl"
                 />
-                <p className="text-sm mt-3 max-w-sm">{item.decription}</p>
+                <p className="text-sm mt-3 max-w-sm">{item.description}</p>
               </div>
             ))}
           </div>

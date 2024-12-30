@@ -1,36 +1,40 @@
 "use client";
 import React, { useState } from "react";
 import CustomInput from "../components/shared/CustomInput";
-import PaymentHeader from "../components/shared/PaymentHeader";
-import PaymentFooter from "../components/PaymentFooter";
+import PaymentHeader from "../components/payment/PaymentHeader";
+import PaymentFooter from "../components/payment/PaymentFooter";
+import SuccessfulPayment from "../components/payment/SuccessfulPayment";
+import PaymentForm from "../components/payment/PaymentForm";
 
 const Payment = () => {
-  const [step, setStep] = useState(1); // Manage the current step of the form
+  const [step, setStep] = useState(1); 
 
-  const nextStep = () => setStep((prev) => Math.min(prev + 1, 3)); // Navigate to the next step
-  const prevStep = () => setStep((prev) => Math.max(prev - 1, 1)); // Navigate to the previous step
+  const nextStep = () => setStep((prev) => Math.min(prev + 1, 4)); 
+  const prevStep = () => setStep((prev) => Math.max(prev - 1, 1)); 
 
   return (
-    <div className="bg-dance-pattern min-h-screen flex justify-center items-center">
+    <div className="bg-payment-pattern min-h-screen flex justify-center items-center">
       <div className="bg-white shadow-lg max-w-md rounded-xl text-center py-9 px-8">
-        <PaymentHeader step={step} />
-        {/* Step 1: Personal Info */}
+        {step < 4 && <PaymentHeader step={step} />}
+
         {step === 1 && (
-          <div>
-            <h2 className="font-bold text-xl mb-4">Step 1: Personal Info</h2>
-            <div className="flex flex-col gap-2">
+          <PaymentForm
+            title="Thanks for joining!"
+            description="Set up your profile first."
+            subdescription="Already have an account?">
+            <div className="flex flex-col gap-4">
               <CustomInput placeholder="Full Name" className="bg-slate-100" />
               <CustomInput placeholder="Email" className="bg-slate-100" />
               <CustomInput placeholder="Username" className="bg-slate-100" />
               <CustomInput placeholder="Password" className="bg-slate-100" />
             </div>
-          </div>
+          </PaymentForm>
         )}
 
-        {/* Step 2: Payment Details */}
         {step === 2 && (
-          <div>
-            <h2 className="font-bold text-xl mb-4">Step 2: Payment Details</h2>
+          <PaymentForm
+            title="Studio Information"
+            description="Tell us some more about your studio and role">
             <div className="flex flex-col gap-2">
               <label className="text-left font-medium">Card Number</label>
               <CustomInput
@@ -51,13 +55,11 @@ const Payment = () => {
                 />
               </div>
             </div>
-          </div>
+          </PaymentForm>
         )}
 
-        {/* Step 3: Billing Address */}
         {step === 3 && (
-          <div>
-            <h2 className="font-bold text-xl mb-4">Step 3: Billing Address</h2>
+          <PaymentForm title="Payment Information" description="$9/month">
             <div className="flex flex-col gap-2">
               <label className="text-left font-medium">Billing Address</label>
               <CustomInput placeholder="123 Main St" className="bg-slate-100" />
@@ -77,11 +79,14 @@ const Payment = () => {
                 />
               </div>
             </div>
-          </div>
+          </PaymentForm>
         )}
 
-        {/* Payment Footer */}
-        <PaymentFooter step={step} onBack={prevStep} onNext={nextStep} />
+        {step === 4 && <SuccessfulPayment />}
+
+        {step < 4 && (
+          <PaymentFooter step={step} onBack={prevStep} onNext={nextStep} />
+        )}
       </div>
     </div>
   );
