@@ -15,7 +15,16 @@ export default {
       colors: {
         primary: '#5E6DF1',
         primary_bold: '#5E6DF1',
-        primary_light:'#8A96FF'
+        primary_light: '#8A96FF',
+        success: '#00C97B',
+        secondary: '#4E4B66',
+        secondary_bold: '#14142B',
+        input: '#EFF0F6'
+      },
+      theme: {
+        fontFamily: {
+          montserrat: ['var(--font-montserrat)', 'sans-serif'],
+        },
       },
     },
   },

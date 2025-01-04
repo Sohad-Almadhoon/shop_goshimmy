@@ -1,4 +1,5 @@
 import React from "react";
+import CustomButton from "../shared/CustomButton";
 
 const SuccessfulPayment = () => {
   return (
@@ -11,6 +12,7 @@ const SuccessfulPayment = () => {
         Get started with exclusive access to listings, shipping made simple, and
         purchase peace of mind.
       </p>
+      <CustomButton text="Explore" />
     </div>
   );
 };

@@ -1,14 +1,17 @@
 import React, { FC } from "react";
+import { twMerge } from "tailwind-merge";
 
 interface CustomButtonProps {
-  text: string;
+  children: React.ReactNode;
   onClick?: () => void;
   variant?: "solid" | "outline";
+  className?: string;
 }
 
 const CustomButton: FC<CustomButtonProps> = ({
-  text,
+  children,
   onClick,
+  className,
   variant = "solid",
 }) => {
   const baseClass = "lg:w-fit w-full text-center p-2 px-8 rounded-2xl";
@@ -18,8 +21,8 @@ const CustomButton: FC<CustomButtonProps> = ({
       : "bg-primary text-white";
 
   return (
-    <button onClick={onClick} className={`${baseClass} ${variantClass}`}>
-      {text}
+    <button onClick={onClick} className={twMerge(baseClass, variantClass , className)}>
+      {children}
     </button>
   );
 };

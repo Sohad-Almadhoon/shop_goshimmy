@@ -5,16 +5,17 @@ import PaymentHeader from "../components/payment/PaymentHeader";
 import PaymentFooter from "../components/payment/PaymentFooter";
 import SuccessfulPayment from "../components/payment/SuccessfulPayment";
 import PaymentForm from "../components/payment/PaymentForm";
+import Card from "../components/shared/Card";
 
 const Payment = () => {
-  const [step, setStep] = useState(1); 
+  const [step, setStep] = useState(1);
 
-  const nextStep = () => setStep((prev) => Math.min(prev + 1, 4)); 
-  const prevStep = () => setStep((prev) => Math.max(prev - 1, 1)); 
+  const nextStep = () => setStep((prev) => Math.min(prev + 1, 4));
+  const prevStep = () => setStep((prev) => Math.max(prev - 1, 1));
 
   return (
     <div className="bg-payment-pattern min-h-screen flex justify-center items-center">
-      <div className="bg-white shadow-lg max-w-md rounded-xl text-center py-9 px-8">
+      <Card>
         {step < 4 && <PaymentHeader step={step} />}
 
         {step === 1 && (
@@ -87,7 +88,7 @@ const Payment = () => {
         {step < 4 && (
           <PaymentFooter step={step} onBack={prevStep} onNext={nextStep} />
         )}
-      </div>
+      </Card>
     </div>
   );
 };
