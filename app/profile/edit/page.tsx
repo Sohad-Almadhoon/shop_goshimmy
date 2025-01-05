@@ -86,7 +86,7 @@ const EditProfile = () => {
               />
             </div>
 
-            <div className="flex gap-2 mt-6">
+            <div className="flex gap-2 mt-6 justify-start">
               <Button type="submit" className="w-full">
                 Save
               </Button>
