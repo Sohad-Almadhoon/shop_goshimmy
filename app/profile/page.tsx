@@ -4,7 +4,7 @@ import { BsInstagram, BsPencilFill, BsStarFill, BsTiktok } from "react-icons/bs"
 import Card from "../components/shared/Card";
 import CustomSelect from "../components/shared/CustomSelect";
 import { BiHeart, BiMessage } from "react-icons/bi";
-
+import { Button } from '@shadcn/ui'; 
 const ProfilePage = () => {
   return (
     <div>
@@ -38,13 +38,18 @@ const ProfilePage = () => {
               className="flex items-center gap-2 text-sm font-bold px-2 text-primary border-secondary border">
               <BiHeart /> <span>Follow</span>
             </CustomButton>
-            <CustomButton variant="outline" className="p-2 text-secondary border-secondary border">
+            <CustomButton
+              variant="outline"
+              className="p-2 text-secondary border-secondary border">
               <BsInstagram />
             </CustomButton>
-            <CustomButton variant="outline" className="p-2 text-secondary border-secondary border">
+            <CustomButton
+              variant="outline"
+              className="p-2 text-secondary border-secondary border">
               {" "}
               <BsTiktok />
             </CustomButton>
+            <Button>Button</Button>
           </div>
         )}
         <div className="flex mt-3 items-center gap-2">
