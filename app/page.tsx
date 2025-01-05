@@ -29,7 +29,7 @@ export default function Home() {
             "Character",
             "Tap",
           ].map((title, index) => (
-            <div>
+            <div key={index}>
               <img
                 src={`/images/main-${index + 1}.png`}
                 alt={`img-${index + 1}`}
@@ -45,7 +45,7 @@ export default function Home() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
           {["James", "Annie", "Phill", "James", "Annie", "Phill"].map(
             (title, index) => (
-              <div>
+              <div key={index}>
                 <img
                   src="/images/palle.jpg"
                   alt={`img-${index + 1}`}
