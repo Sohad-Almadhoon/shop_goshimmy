@@ -16,7 +16,7 @@ const Payment = () => {
 
   return (
     <div className="bg-payment-pattern min-h-screen flex justify-center items-center">
-      <Card>
+      <Card className="p-10 flex flex-col justify-center">
         {step < 4 && <PaymentHeader step={step} />}
 
         {step === 1 && (
