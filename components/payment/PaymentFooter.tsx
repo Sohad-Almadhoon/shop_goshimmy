@@ -1,5 +1,5 @@
 import React from "react";
-import CustomButton from "../shared/CustomButton";
+import { Button } from "../ui/button";
 
 interface PaymentFooterProps {
   step: number;
@@ -7,7 +7,11 @@ interface PaymentFooterProps {
   onNext: () => void;
 }
 
-const PaymentFooter: React.FC<PaymentFooterProps> = ({ step, onBack, onNext }) => {
+const PaymentFooter: React.FC<PaymentFooterProps> = ({
+  step,
+  onBack,
+  onNext,
+}) => {
   return (
     <div className="flex mt-6 justify-between items-center">
       {step === 1 ? (
@@ -16,12 +20,12 @@ const PaymentFooter: React.FC<PaymentFooterProps> = ({ step, onBack, onNext }) =
           <span className="text-primary">terms of service</span>.
         </p>
       ) : (
-      <CustomButton text="Back" onClick={onBack} />
+        <Button onClick={onBack}> Back</Button>
       )}
       {step < 3 ? (
-       <CustomButton text="Next" onClick={onNext} />
+        <Button onClick={onNext}> Next</Button>
       ) : (
-        <CustomButton text="Save" onClick={onNext} />
+        <Button onClick={onNext}> Save</Button>
       )}
     </div>
   );
