@@ -31,14 +31,14 @@ const membership = [
 ];
 const membershipPhotoList = [
     {
-        img: "section5",
+        img: "member1",
         description: `Fundraising for competition teams or booster 
 clubs - dance families are often happy to donate 
 costumes that are sitting in their closets and can 
 be sold on GoShimmy`,
     },
     {
-        img: "section6",
+        img: "member2",
         description: `Group costume purchases allow you to control 
 your own markup - costumes bought on 
 GoShimmy can become a profitable revenue 
@@ -46,7 +46,7 @@ stream for your business. Savings for your studio,
 savings for your community`,
     },
     {
-        img: "section7",
+        img: "member3",
         description: ` Issuing students costume credits or other perks 
 for returned costumes at the end of the season is 
 a great way to save your families money - those 

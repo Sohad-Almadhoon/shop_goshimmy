@@ -15,7 +15,7 @@ const PaymentFooter: React.FC<PaymentFooterProps> = ({
   return (
     <div className="flex mt-6 justify-between items-center">
       {step === 1 ? (
-        <p className="text-left w-72 flex flex-wrap">
+        <p className="text-left w-72 text-sm flex flex-wrap">
           By creating an account you agree to our{" "}
           <span className="text-primary">terms of service</span>.
         </p>

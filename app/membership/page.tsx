@@ -1,8 +1,8 @@
 import React from "react";
 import { membership, membershipPhotoList } from "../helpers/data";
+import { BiCheck } from "react-icons/bi";
 
 const MembershipPage = () => {
-
   return (
     <div>
       <div className="grid lg:grid-cols-4 grid-cols-2">
@@ -23,11 +23,15 @@ const MembershipPage = () => {
       <section className="lg:mx-56 mx-12 lg:gap-0  gap-5 flex my-12 lg:flex-row flex-col">
         <ul className="flex flex-col gap-3 list-disc flex-1">
           {membership.map((item) => (
-            <li className="flex flex-col before:content-['✔'] before:mr-2 before:text-green-500 before:flex-shrink-0">
-              <span className="font-bold">{item.title}</span>
-              <span className="max-w-md text-sm font-semibold text-opacity-60">
-                {item.description}
-              </span>
+            <li className="flex">
+              <BiCheck className="text-primary w-10 h-7" />
+              <div className="flex flex-col">
+                {" "}
+                <span className="font-bold">{item.title}</span>
+                <span className="max-w-md text-sm font-semibold text-opacity-60">
+                  {item.description}
+                </span>
+              </div>
             </li>
           ))}
         </ul>

@@ -36,13 +36,13 @@ const BrandSearch = () => {
       <CommandList className="rounded-md bg-white mt-2 shadow-md">
         <CommandEmpty>No results found.</CommandEmpty>
         {filteredBrands.length > 0 ? (
-          <CommandGroup>
+          <CommandGroup >
             <RadioGroup
               className="space-y-2"
               value={selectedBrand}
               onValueChange={setSelectedBrand}>
               {filteredBrands.map((item) => (
-                <div key={item} className="flex items-center space-x-2">
+                <div key={item} className="flex items-center space-x-2 z-50">
                   <CommandItem
                     className={`flex items-center p-2 cursor-pointer ${
                       selectedBrand === item ? "bg-blue-100" : ""

@@ -10,18 +10,17 @@ import { Form } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import React from "react";
 
-const Password = () => {
+const PasswordReset = () => {
   return (
     <div className="bg-payment-pattern min-h-screen pt-10 pb-20 flex items-center justify-center">
       <Card>
         <CardHeader>
-          <CardTitle className="text-2xl">New password</CardTitle>
-          <CardDescription>Enter in your new password</CardDescription>
+          <CardTitle className="text-2xl">Reset password</CardTitle>
+          <CardDescription>Forgot your password? No problem.</CardDescription>
         </CardHeader>
         <CardContent>
           <Form>
-            <Input placeholder="New password" />
-            <Input placeholder="Reenter password" className="mt-3" />
+            <Input placeholder="Email" className="mt-3" />
             <div className="flex justify-end mt-8">
               <Button>Reset</Button>
             </div>
@@ -32,4 +31,4 @@ const Password = () => {
   );
 };
 
-export default Password;
+export default PasswordReset;

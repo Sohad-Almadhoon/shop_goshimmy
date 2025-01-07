@@ -4,7 +4,7 @@ import { Button } from "../ui/button";
 
 const SuccessfulPayment = () => {
   return (
-    <div className="flex flex-col items-center gap-4">
+    <div className="flex flex-col items-center gap-4 max-w-md">
       <img src="/images/thumb.svg" alt="" />
       <h2 className="text-3xl font-bold">Bravo! Thanks for joining.</h2>
       <p>

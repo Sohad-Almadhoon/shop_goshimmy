@@ -13,8 +13,8 @@ const PaymentForm: FC<PaymentFormProps> = ({
 }) => {
   return (
     <div>
-      <h2 className="text-2xl font-semibold mb-3"> {title}</h2>
-      <p className="font-medium">
+      <h2 className="text-2xl font-semibold mb-1 text-center"> {title}</h2>
+      <p className="font-medium text-center">
         {description}
         <span className="text-primary">{subdescription}</span>
       </p>
