@@ -18,7 +18,7 @@ const PaymentForm: FC<PaymentFormProps> = ({
         {description}
         <span className="text-primary">{subdescription}</span>
       </p>
-      <form className=" gap-2 mt-4 flex flex-col">{children}</form>
+      <form className="gap-2 mt-4 flex flex-col">{children}</form>
     </div>
   );
 };

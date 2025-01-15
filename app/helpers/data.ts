@@ -156,5 +156,49 @@ const accordionItems = [
     { id: "color", label: "Color", content: colorOptions, isColor: true },
     { id: "condition", label: "Condition", content: conditionOptions },
 ];
-
-export { membership, membershipPhotoList, categoryOptions, genreOptions, conditionOptions, colorOptions, accordionItems }
+const footerItems = [
+    [
+        "Ballet",
+        "Ballroom",
+        " Belly Dance",
+        "Character",
+        "Cheerleading / Dance Team",
+        "Contemporary / Lyrical / Modern",
+        "Figure Skating",
+        "Folk / Cultural Dance",
+        " Hip Hop / Street Styles",
+        "Holiday",
+        "Jazz",
+        "Tap",
+    ],
+    [
+        "Leotards",
+        "Unitards",
+        "Dresses ",
+        "Two-Piece Sets & Suits",
+        "Jackets& Coats",
+        "Shirts & Tops",
+        "Skirts & Tutus",
+        "Pants & Leggings",
+        "Shorts",
+        "Warm-ups",
+        "Tights",
+        "Shoes",
+        "Accessories",
+    ], [
+        "FAQ",
+        " How It Works",
+        " Ensemble Membership",
+        " Returns & Shipping",
+        "How To Ship a Tutu",
+        "GoShimmy Guarantee",
+    ], [
+        "About Us",
+        "Our Partnerships",
+        "Terms of Service",
+        "Privacy Policy",
+        " Accessibility",
+        "Contact Us",
+    ]
+]
+export { membership, membershipPhotoList, categoryOptions, genreOptions, conditionOptions, colorOptions, accordionItems, footerItems }

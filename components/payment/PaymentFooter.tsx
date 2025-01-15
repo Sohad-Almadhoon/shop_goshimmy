@@ -15,12 +15,12 @@ const PaymentFooter: React.FC<PaymentFooterProps> = ({
   return (
     <div className="flex mt-6 justify-between items-center">
       {step === 1 ? (
-        <p className="text-left w-72 text-sm flex flex-wrap">
+        <p className="text-left lg:w-72 w-56 text-sm ">
           By creating an account you agree to our{" "}
           <span className="text-primary">terms of service</span>.
         </p>
       ) : (
-        <Button onClick={onBack}> Back</Button>
+        <Button onClick={onBack} variant='outline' className="border-primary border-2"> Back</Button>
       )}
       {step < 3 ? (
         <Button onClick={onNext}> Next</Button>

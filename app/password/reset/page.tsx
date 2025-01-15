@@ -12,8 +12,8 @@ import React from "react";
 
 const PasswordReset = () => {
   return (
-    <div className="bg-payment-pattern min-h-screen pt-10 pb-20 flex items-center justify-center">
-      <Card>
+    <div className="bg-payment-pattern min-h-screen  flex justify-center">
+      <Card className="w-[420px] h-fit mt-20">
         <CardHeader>
           <CardTitle className="text-2xl">Reset password</CardTitle>
           <CardDescription>Forgot your password? No problem.</CardDescription>

@@ -4,8 +4,8 @@ import React from "react";
 
 const Logout = () => {
   return (
-    <div className="bg-payment-pattern min-h-screen pt-10 pb-20 flex items-center justify-center">
-      <Card>
+    <div className="bg-payment-pattern min-h-screen flex  justify-center">
+      <Card className="w-[420px] h-fit mt-20">
         <CardTitle className="text-center my-6 text-sm">
           Need to log back in? <Link className="text-primary" href="login">Log in</Link>
         </CardTitle>

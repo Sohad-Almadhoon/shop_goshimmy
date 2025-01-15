@@ -14,13 +14,18 @@ import {
 } from "@/components/ui/accordion";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
-import {
-  accordionItems,
-} from "../helpers/data";
+import { accordionItems } from "../helpers/data";
 import { Button } from "@/components/ui/button";
 import BrandSearch from "@/components/BrandSearch";
-import { Select } from "@/components/ui/select";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { Card } from "@/components/ui/card";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const ProfilePage = () => {
   return (
@@ -82,18 +87,22 @@ const ProfilePage = () => {
         </p>
       </div>
       <div className="px-36 mb-12">
-        <div className="flex justify-between items-center mb-5">
-          {" "}
-          <span className="font-bold">Filter by</span>
-          <div className="flex items-center gap-6">
-            <span className="text-sm whitespace-nowrap">Sort by</span>
-            <Select>
-              <option value="Popular">Popular</option>
-            </Select>
-          </div>
-        </div>
         <div className="flex">
           <div className="flex-1 mr-10">
+            <span className="font-bold mb-10 block">Filter by</span>
+            <div className="flex flex-col gap-4">
+              <RadioGroup>
+                <div className="flex items-center gap-2">
+                  <RadioGroupItem id="radio-1" value="Rehearsal Wear" />
+                  <Label htmlFor="radio-1">Rehearsal Wear</Label>
+                </div>
+                <div className="flex items-center gap-2">
+                  <RadioGroupItem id="radio-2" value="Costumes" />
+                  <Label htmlFor="radio-2">Costumes</Label>
+                </div>
+              </RadioGroup>
+              <hr />
+            </div>
             <Accordion type="single" collapsible>
               {accordionItems.map(
                 ({ id, label, content, isColor, isBrands }) => (
@@ -101,7 +110,7 @@ const ProfilePage = () => {
                     <AccordionTrigger>{label}</AccordionTrigger>
                     <AccordionContent>
                       {isBrands ? (
-                        <BrandSearch/>
+                        <BrandSearch />
                       ) : isColor ? (
                         <RadioGroup className="grid grid-cols-4 gap-3">
                           {content.map((color) => (
@@ -144,24 +153,97 @@ const ProfilePage = () => {
               )}
             </Accordion>
           </div>
-          <div className="grid grid-cols-4 gap-5 flex-3">
-            {Array.from({ length: 12 }).map((_, index) => (
-              <Card
-                key={index}
-                className="flex flex-col p-0 text-left overflow-hidden">
-                <img
-                  src="/images/palle.jpg"
-                  alt=""
-                  className="w-full object-cover"
-                />
-                <div className="p-3 flex-col flex">
-                  <span className="font-bold"> Ballet shoes</span>
-                  <span>Size: S</span>
-                  <span>$15</span>
-                </div>
-              </Card>
-            ))}
-          </div>
+          <Tabs defaultValue="tab1" value="tab1">
+            <TabsList>
+              <TabsTrigger value="tab1">Current List </TabsTrigger>
+              <TabsTrigger value="tab2">Sold Listings</TabsTrigger>
+              <TabsTrigger value="tab3">Reviews (10)</TabsTrigger>
+            </TabsList>
+
+            <TabsContent value="tab1">
+              <div className="flex items-center gap-6 justify-end">
+                <span className="text-sm whitespace-nowrap font-semibold">
+                  Sort by
+                </span>
+                <Select>
+                  <SelectTrigger>
+                    <SelectValue placeholder="Popular" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="popular">Popular</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+
+              <div className="grid grid-cols-4 gap-5 flex-3">
+                {Array.from({ length: 12 }).map((_, index) => (
+                  <Card
+                    key={index}
+                    className="flex flex-col p-0 text-left overflow-hidden">
+                    <img
+                      src="/images/palle.jpg"
+                      alt=""
+                      className="w-full object-cover"
+                    />
+                    <div className="p-3 flex-col flex">
+                      <span className="font-bold"> Ballet shoes</span>
+                      <span>Size: S</span>
+                      <span>$15</span>
+                    </div>
+                  </Card>
+                ))}
+              </div>
+            </TabsContent>
+            <TabsContent value="tab2">
+              {" "}
+              <div className="flex items-center gap-6">
+                <span className="text-sm whitespace-nowrap font-semibold">
+                  Sort by
+                </span>
+                <Select>
+                  <SelectTrigger>
+                    <SelectValue placeholder="Popular" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="popular">Popular</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+              <div className="grid grid-cols-4 gap-5 flex-3">
+                {Array.from({ length: 12 }).map((_, index) => (
+                  <Card
+                    key={index}
+                    className="flex flex-col p-0 text-left overflow-hidden">
+                    <img
+                      src="/images/palle.jpg"
+                      alt=""
+                      className="w-full object-cover"
+                    />
+                    <div className="p-3 flex-col flex">
+                      <span className="font-bold"> Ballet shoes</span>
+                      <span>Size: S</span>
+                      <span>$15</span>
+                    </div>
+                  </Card>
+                ))}
+              </div>
+            </TabsContent>
+            <TabsContent value="tab3">
+              <div className="flex items-center gap-6">
+                <span className="text-sm whitespace-nowrap font-semibold">
+                  Sort by
+                </span>
+                <Select>
+                  <SelectTrigger>
+                    <SelectValue placeholder="Recent" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="recent">Recent</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+            </TabsContent>
+          </Tabs>
         </div>
       </div>
     </div>
