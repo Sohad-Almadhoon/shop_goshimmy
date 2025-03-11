@@ -201,4 +201,61 @@ const footerItems = [
         "Contact Us",
     ]
 ]
-export { membership, membershipPhotoList, categoryOptions, genreOptions, conditionOptions, colorOptions, accordionItems, footerItems }
+const profileMenuItems = [
+    { label: "Jasmine.grammer", isBold: true },
+    { label: "View Profile" },
+    { isDivider: true },
+    { label: "My Account" },
+    { label: "My Likes" },
+    { label: "My Purchases" },
+    { label: "My Sales" },
+    { label: "My Listings" },
+    { label: "Create a Listing" },
+    { label: "GoShimmy Bucks" },
+    { label: "Settings" },
+    { label: "Logout" },
+];
+
+const dummyReviews = [
+    {   id:1,
+        img: '/images/profile.png',
+        username: "Username",
+        stars: 3,
+        createdAt: "Oct 3, 2021",
+        content: `Buyers will receive a refund if their order was not shipped or if it did not arrive at its destination, but the refund must be requested within 90 days of purchase. Buyers will 
+receive a refund if their order was not shipped or if it did not arrive at its destination, but the refund must be requested within 90 days of purchase.`
+        ,
+        images: [
+            "/images/palle.jpg",
+            "/images/palle.jpg",
+            "/images/palle.jpg",
+        ]
+    },
+    {
+        id: 2,
+        img: '/images/profile.png',
+        username: "Username",
+        stars: 3,
+        createdAt: "Oct 3, 2021",
+        content: `Buyers will receive a refund if their order was not shipped or if it did not arrive at its destination, but the refund must be requested within 90 days of purchase. Buyers will 
+receive a refund if their order was not shipped or if it did not arrive at its destination, but the refund must be requested within 90 days of purchase.`
+       
+    },
+    {
+        id: 3,
+        img: '/images/profile.png',
+        username: "Username",
+        stars: 3,
+        createdAt: "Oct 3, 2021",
+        content: `Buyers will receive a refund if their order was not shipped or if it did not arrive at its destination, but the refund must be requested within 90 days of purchase. Buyers will 
+receive a refund if their order was not shipped or if it did not arrive at its destination, but the refund must be requested within 90 days of purchase.`
+        , 
+    images: [
+        "/images/palle.jpg",
+        "/images/palle.jpg",
+        "/images/palle.jpg",
+    ]
+       
+    }
+]
+export { membership, membershipPhotoList, categoryOptions, profileMenuItems, genreOptions, conditionOptions, colorOptions, accordionItems, footerItems, dummyReviews }

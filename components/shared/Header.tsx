@@ -9,6 +9,7 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
 } from "@radix-ui/react-dropdown-menu";
+import { profileMenuItems } from "@/app/helpers/data";
 
 const Header = () => {
   return (
@@ -53,14 +54,10 @@ const Header = () => {
                 Jasmine.grammer
               </DropdownMenuItem>
               <DropdownMenuItem>View Profile</DropdownMenuItem>
-              <hr className="my-1"/>
-              <DropdownMenuItem>My Account</DropdownMenuItem>
-              <DropdownMenuItem>My Likes</DropdownMenuItem>
-              <DropdownMenuItem>My Purchases</DropdownMenuItem>
-              <DropdownMenuItem>My Sales</DropdownMenuItem>
-              <DropdownMenuItem>My Listings</DropdownMenuItem>
-              <DropdownMenuItem>Create a Listing</DropdownMenuItem>
-              <DropdownMenuItem>GoShimmy Bucks</DropdownMenuItem>
+              <hr className="my-1" />
+              {profileMenuItems.map((item, index) => (
+                <DropdownMenuItem key={index}>{item.label}</DropdownMenuItem> 
+              ))}
             </DropdownMenuContent>
           </DropdownMenu>
 

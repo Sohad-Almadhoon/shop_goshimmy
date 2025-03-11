@@ -21,12 +21,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={montserrat.className}>
-        <Header />
-        <main>{children}</main>
-        <Footer />
-      </body>
-    </html>
+      <html lang="en">
+        <body className={montserrat.className}>
+          <Header />
+          <main>{children}</main>
+          <Footer />
+        </body>
+      </html>
   );
 }
