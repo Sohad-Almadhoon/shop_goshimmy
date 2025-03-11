@@ -16,7 +16,8 @@ export default {
 				"dance-pattern": "url('/images/dance-pattern.jpg')"
 			},
 			colors: {
-				primary:"#d7d8"
+				primary: "#d7d8",
+				success:"#22c55e"
 			}
 		},
 	},

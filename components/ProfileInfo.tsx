@@ -1,22 +1,18 @@
-"use client";
 import {
   BsInstagram,
   BsPencilFill,
   BsStarFill,
   BsTiktok,
 } from "react-icons/bs";
-import { BiHeart, BiMessage } from "react-icons/bi";
+import { BiMessage } from "react-icons/bi";
 
 import { Button } from "@/components/ui/button";
-import { useState } from "react";
 import Following from "./Following";
 const ProfileInfo = () => {
-  const [openFollow, setOpenFollow] = useState(false);
-  const handleFollow = () => setOpenFollow(!openFollow);
-  console.log(openFollow)
+
   return (
     <div className="flex justify-center items-center flex-col">
-      {openFollow && <Following />}
+     
       <img
         src="/images/profile-img.png"
         alt="profile-img"
@@ -41,12 +37,7 @@ const ProfileInfo = () => {
             className="flex items-center gap-2 text-sm font-bold px-2 text-primary border-secondary border">
             <BiMessage /> <span>Message </span>
           </Button>
-          <Button
-              variant="outline"
-              onClick={handleFollow}
-            className="flex items-center gap-2 text-sm font-bold px-2 text-primary border-secondary border">
-            <BiHeart /> <span>Follow</span>
-          </Button>
+          <Following />
           <Button
             variant="outline"
             className="p-2 rounded-full text-secondary_bold">

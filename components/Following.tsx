@@ -1,33 +1,54 @@
 import React from "react";
 import {
   Dialog,
+  DialogTrigger,
   DialogClose,
   DialogContent,
+  DialogHeader,
+  DialogTitle,
   DialogDescription,
 } from "./ui/dialog";
+import { BiHeart, BiX } from "react-icons/bi";
 
 const Following = () => {
   return (
-    <div className="bg-white z-50 rounded-lg shadow-md text-black inset-0 absolute left-1/2 top-1/3 -translate-x-1/2 -translate-y-1/2 size-[500px]">
-      <Dialog>
-        <DialogClose>x</DialogClose>
-        <DialogDescription>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facilis quia
-          ducimus temporibus sint, autem omnis provident animi impedit
-          cupiditate adipisci reiciendis. Animi possimus officiis culpa
-          voluptatibus minima. Blanditiis, quas molestias!
-        </DialogDescription>
-        <DialogContent>
-          <p className="text-red-500">
-            {" "}
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero
-            fuga ipsa, eaque quo molestiae temporibus ipsum eveniet error
-            aliquid cupiditate, facilis, itaque quaerat. Dolorum modi aspernatur
-            molestiae perspiciatis eveniet odio.
-          </p>
-        </DialogContent>
-      </Dialog>
-    </div>
+    <Dialog>
+      <DialogTrigger>
+        <div
+          className="flex items-center gap-2 text-sm font-bold px-6 py-3 rounded-3xl text-primary border-secondary border">
+          <BiHeart /> <span>Follow</span>
+        </div>
+      </DialogTrigger>
+
+      <DialogContent className="max-w-md p-6 rounded-lg bg-white text-black">
+        <DialogHeader>
+          <DialogTitle className="text-lg font-semibold">
+            Following (12,497)
+          </DialogTitle>
+        </DialogHeader>
+        <div>
+          {[1, 2, 3, 4, 5, 6].map((item) => (
+            <div className="flex items-center gap-4 mt-4" key={item}>
+              <img
+                src="/images/profile.png"
+                alt="Profile"
+                className="size-14 rounded-full object-cover"
+              />
+              <div>
+                <p className="font-medium text-lg">First and Last Name</p>
+                <DialogDescription className="text-gray-500">
+                  @username
+                </DialogDescription>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <DialogClose className="absolute top-4 right-4 text-gray-600 hover:text-gray-900">
+          <BiX />{" "}
+        </DialogClose>
+      </DialogContent>
+    </Dialog>
   );
 };
 
