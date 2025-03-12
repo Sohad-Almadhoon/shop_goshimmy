@@ -57,4 +57,43 @@
   }
 }
 
+@font-face {
+    font-family: "Lehigh Personal";
+    src: url("./assets/fonts/Lehigh-Commercial-Black.otf") format("opentype");
+    font-weight: 900;
+}
+/* ../public/fonts */
+ @font-face {
+    font-family: "Lehigh Personal";
+    src: url("./assets/fonts/Lehigh-Commercial-Bold.otf") format("opentype");
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: "Lehigh Personal";
+    src: url("./assets/fonts/Lehigh-Commercial-Light.otf") format("opentype");
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: "Lehigh Personal";
+    src: url("./assets/fonts/Lehigh-Commercial-Regular.otf") format("opentype");
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "Lehigh Personal";
+    src: url("./assets/fonts/Lehigh-Commercial-SemiBold.otf") format("opentype");
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: "Lehigh Personal";
+    src: url("./assets/fonts/Lehigh-Commercial-Thin.otf") format("opentype");
+    font-weight: 100;
+}
+
+* {
+    font-family: "Lehigh Personal", sans-serif;
+} 
 

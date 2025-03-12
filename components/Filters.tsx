@@ -7,7 +7,7 @@ import {
 } from "@/components/ui/accordion";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
-import { accordionItems } from "@/app/helpers/data";
+import { accordionItems } from "@/helpers/data";
 import BrandSearch from "@/components/BrandSearch";
 import {
   Select,
@@ -19,7 +19,7 @@ import {
 
 const Filters = () => {
   return (
-    <div className="max-w-64 min-w-64">
+    <div className="max-w-64 min-w-64 lg:block hidden">
       <div className="flex flex-col gap-4">
         <RadioGroup>
           {["Rehearsal Wear", "Costumes"].map((item, index) => (

@@ -19,17 +19,15 @@ const ProfilePage = () => {
   return (
     <div className="relative">
       <ProfileInfo />
-      <div className="px-36 max-w-screen-2xl w-full mx-auto">
+      <div className="lg:px-36 max-w-screen-2xl w-full mx-auto">
         <Tabs defaultValue="tab1" onValueChange={setActiveTab}>
           <TabsList className="flex justify-center">
-            <TabsTrigger value="tab1" className="underline">
-              Current List
-            </TabsTrigger>
+            <TabsTrigger value="tab1">Current List</TabsTrigger>
             <TabsTrigger value="tab2">Sold Listings</TabsTrigger>
             <TabsTrigger value="tab3">Reviews (10)</TabsTrigger>
           </TabsList>
 
-          <div className="flex gap-10 mt-4">
+          <div className="flex lg:flex-row flex-col lg:gap-10 mt-4">
             {/* Sidebar Filters - Show only in tab1 and tab2 */}
             {activeTab !== "tab3" && (
               <div className="w-64 flex-shrink-0">
@@ -40,7 +38,7 @@ const ProfilePage = () => {
             {/* Main Content Area */}
             <div className="flex-grow">
               <TabsContent value="tab1">
-                <div className="grid grid-cols-4 gap-5 pb-5">
+                <div className="grid lg:grid-cols-4 grid-cols-2 gap-5 pb-5 lg:px-0 px-5">
                   {Array.from({ length: 12 }).map((_, index) => (
                     <Card
                       key={index}
@@ -61,7 +59,7 @@ const ProfilePage = () => {
               </TabsContent>
 
               <TabsContent value="tab2">
-                <div className="grid grid-cols-4 gap-5 pb-5">
+                <div className="grid lg:grid-cols-4 grid-cols-2 gap-5 pb-5 lg:px-0 px-5">
                   {Array.from({ length: 12 }).map((_, index) => (
                     <Card
                       key={index}
@@ -83,7 +81,7 @@ const ProfilePage = () => {
 
               {/* Reviews Section */}
               <TabsContent value="tab3">
-                <div className="flex items-center justify-between mb-4 border-b-2 pb-2">
+                <div className="flex items-center justify-between mb-4 border-gray border-b-2 pb-2 lg:px-0 px-5">
                   <span className="font-bold">Reviews</span>
                   <div className="flex items-center gap-6">
                     <span className="text-sm whitespace-nowrap font-semibold">
@@ -100,7 +98,7 @@ const ProfilePage = () => {
                   </div>
                 </div>
                 {/* Full-width Reviews */}
-                <div className="w-full">
+                <div className="w-full lg:px-0 px-5">
                   <Reviews />
                 </div>
               </TabsContent>

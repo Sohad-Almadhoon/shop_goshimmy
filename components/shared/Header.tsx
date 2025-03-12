@@ -9,15 +9,15 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
 } from "@radix-ui/react-dropdown-menu";
-import { profileMenuItems } from "@/app/helpers/data";
+import { profileMenuItems } from "@/helpers/data";
 
 const Header = () => {
   return (
     <header className="lg:px-24 px-8 py-8 lg:py-3">
       <div className="flex justify-between lg:items-center lg:flex-row flex-col lg:gap-12 gap-3 py-2">
         <div className="flex lg:items-start items-center flex-col">
-          <span className="text-primary text-3xl font-bold">Go Shoppy</span>
-          <span className="text-primary_light text-xs">
+          <span className="text-primary text-3xl font-bold">Go Shimmy</span>
+          <span className="text-primary text-xs font-medium">
             The Dancewear Marketplace
           </span>
         </div>
@@ -56,7 +56,7 @@ const Header = () => {
               <DropdownMenuItem>View Profile</DropdownMenuItem>
               <hr className="my-1" />
               {profileMenuItems.map((item, index) => (
-                <DropdownMenuItem key={index}>{item.label}</DropdownMenuItem> 
+                <DropdownMenuItem key={index}>{item.label}</DropdownMenuItem>
               ))}
             </DropdownMenuContent>
           </DropdownMenu>

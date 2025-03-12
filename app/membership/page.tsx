@@ -1,5 +1,5 @@
 import React from "react";
-import { membership, membershipPhotoList } from "../helpers/data";
+import { membership, membershipPhotoList } from "../../helpers/data";
 import { BiCheck } from "react-icons/bi";
 
 const MembershipPage = () => {

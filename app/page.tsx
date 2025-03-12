@@ -59,9 +59,9 @@ export default function Home() {
         </div>
       </section>
       <section className="flex lg:flex-row flex-col">
-        <div className="bg-primary_bold text-white flex-1 lg:pl-24 lg:py-0 p-10 flex justify-center flex-col">
+        <div className="bg-primaryDark text-white flex-1 lg:pl-24 lg:py-0 p-10 flex justify-center flex-col">
           <h4 className="text-2xl font-bold mb-3">Ensemble Membership</h4>
-          <p className="text-[#FCFCFC] text-sm max-w-md w-full leading-relaxed">
+          <p className="text-lightGray text-sm max-w-md w-full leading-relaxed">
             Calling all dance studio owners, directors, and choreographers!
             Ensemble is a program designed specifically for you to be able to
             buy or sell multiple pieces of the same costume.

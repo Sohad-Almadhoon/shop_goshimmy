@@ -17,19 +17,21 @@ const ReviewDialog = () => {
   return (
     <Dialog>
       <DialogTrigger>
-        <div className="flex items-center gap-2 text-sm font-bold px-6 py-3 rounded-3xl text-primary border-secondary border">
+        <div className="flex items-center gap-2 text-sm font-bold px-6 py-3 rounded-3xl text-primary border-gray border-2">
           Add Review
         </div>
       </DialogTrigger>
 
-      <DialogContent className="max-w-md p-6 rounded-lg bg-white text-black">
+      <DialogContent className="lg:max-w-md max-w-md p-6 rounded-lg bg-white text-black">
         <DialogHeader>
           <DialogTitle className="text-lg font-semibold">
             Leave a review
           </DialogTitle>
           <DialogDescription>
             {" "}
-            <span className="text-sm">How was your [name of itme] from [name of seller]?</span>
+            <span className="text-sm">
+              How was your [name of itme] from [name of seller]?
+            </span>
           </DialogDescription>
         </DialogHeader>
         <div>
@@ -44,7 +46,7 @@ const ReviewDialog = () => {
           <div className="mt-5">
             <h3 className="text-sm font-bold">Describe your experience</h3>
             <textarea
-              className="w-full bg-slate-200 outline-none rounded-lg mt-4 p-5"
+              className="w-full bg-lightGray outline-none rounded-lg mt-4 p-5"
               placeholder="How was your experience with this item and 
 this seller?"></textarea>
           </div>
@@ -60,13 +62,13 @@ this seller?"></textarea>
                   <BiX />
                 </span>
               </div>
-              <div className="size-16 bg-slate-200  border-dashed border-2 border-black/50 rounded-lg flex items-center justify-center">
+              <div className="size-16 bg-lightGray border-dashed border-2 border-bodyLight rounded-lg flex items-center justify-center">
                 <PlusIcon className="text-xl" />
               </div>
             </div>
           </div>
           <div className="flex justify-end mt-5">
-            <Button className="bg-blue-500 text-white px-5 hover:text-blue-600">
+            <Button className="bg-primary text-white px-5 hover:text-primaryDark">
               Submit review
             </Button>
           </div>
