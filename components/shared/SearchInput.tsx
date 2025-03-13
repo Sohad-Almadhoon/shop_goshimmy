@@ -1,22 +1,27 @@
 import { Input } from "@/components/ui/input";
+import { twMerge } from "tailwind-merge";
 interface SearchInputProps {
   placeholder: string;
   value: string;
   onChange: (value: string) => void;
-  className?: string; 
+  className?: string;
 }
 export default function SearchInput({
   placeholder,
   value,
   onChange,
+  className,
 }: SearchInputProps) {
   return (
-    <div className="flex w-full max-w-sm items-center bg-input rounded-xl px-2.5 py-.5">
+    <div className="flex w-fit max-w-sm items-center bg-lightGray rounded-xl px-2.5 py-.5">
       <SearchIcon className="h-4 w-4 mr-2.5" />
       <Input
         type="search"
         placeholder={placeholder}
-        className="w-full border-0 focus:outline-none shadow-none"
+        className={twMerge(
+          "w-full border-0 focus:outline-none shadow-none",
+          className
+        )}
         value={value}
         onChange={(e) => onChange(e.target.value)}
       />

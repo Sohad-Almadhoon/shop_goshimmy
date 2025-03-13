@@ -8,7 +8,7 @@ import { BiUpload } from "react-icons/bi";
 import React from "react";
 import { useForm } from "react-hook-form";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import Account from "@/components/profile/Account";
+import Account from "@/components/profile/edit/Account";
 
 interface FormData {
   username: string;
