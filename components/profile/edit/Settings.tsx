@@ -4,6 +4,9 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import React from "react";
 import { BiPlus, BiTrash } from "react-icons/bi";
+import CardDialog from "./CardDialog";
+import AddressDialog from "./AddressDialog";
+import CancelMembership from "./CancelMembership";
 
 const Settings = () => {
   return (
@@ -22,10 +25,7 @@ const Settings = () => {
               </div>
               <BiTrash className="text-primary border-2 text-4xl p-1 rounded-full border-primary" />
             </div>
-            <div className="flex items-center gap-2 text-primary mt-3 font-bold">
-              <BiPlus className="text-2xl" />
-              <span className="text-lg">Add another card</span>
-            </div>
+            <CardDialog />
           </div>
           <div>
             <h3 className="font-bold">Address</h3>
@@ -36,10 +36,7 @@ const Settings = () => {
               </span>
               <BiTrash className="text-primary border-2 text-4xl p-1 rounded-full border-primary" />
             </div>
-            <div className="flex items-center gap-2 text-primary mt-3 font-bold">
-              <BiPlus className="text-2xl" />
-              <span className="text-lg">Add another address</span>
-            </div>
+            <AddressDialog />
           </div>
         </div>
       </div>
@@ -80,7 +77,7 @@ const Settings = () => {
           <h3 className="font-bold"> Ensemble subscription</h3>
           <hr className="border-b border-gray my-3" />
           <p> You can cancel your ensemble subscription any time</p>
-          <span className="text-primary"> Cancel Ensemble Membership</span>
+          <CancelMembership />
         </div>
       </div>
     </div>
