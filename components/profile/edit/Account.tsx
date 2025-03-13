@@ -2,15 +2,16 @@ import React from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../../ui/tabs";
 import { BiLike, BiPurchaseTag, BiSmile, BiSolidAnalyse } from "react-icons/bi";
 import { BsPerson } from "react-icons/bs";
-import { Settings } from "lucide-react";
 import Purchase from "./Purchase";
 import Sales from "./Sales";
 import Listing from "./Listing";
 import Likes from "./Likes";
+import Settings from "./Settings";
+import { SettingsIcon } from "lucide-react";
 
 const Account = () => {
   return (
-    <div className="min-h-screen pb-5">
+    <div className="min-h-screen pb-16">
       <Tabs defaultValue="tab1" className=" min-h-screen bg-lightGray flex">
         <TabsList className="flex  min-w-64 p-5 flex-col items-start *:flex *:items-center *:gap-2">
           <TabsTrigger value="tab1">
@@ -30,7 +31,7 @@ const Account = () => {
             GoShimmy Bucks
           </TabsTrigger>
           <TabsTrigger value="tab6">
-            <Settings className="size-4" /> Settings
+            <SettingsIcon className="size-4" /> Settings
           </TabsTrigger>
           <TabsTrigger value="tab7"> Log out</TabsTrigger>
         </TabsList>
@@ -47,6 +48,9 @@ const Account = () => {
           </TabsContent>
           <TabsContent value="tab4" className="flex-3">
             <Likes />
+          </TabsContent>
+          <TabsContent value="tab6" className="flex-3">
+            <Settings />
           </TabsContent>
         </div>
       </Tabs>
