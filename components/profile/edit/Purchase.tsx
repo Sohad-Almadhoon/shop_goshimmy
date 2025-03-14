@@ -1,4 +1,12 @@
 import React from "react";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
 import Searchbar from "./Searchbar";
 import { purchaseData } from "@/helpers/mockData";
 
@@ -6,74 +14,75 @@ const Purchase = () => {
   return (
     <div className="px-10">
       <Searchbar title="My purchases" />
-      <div className="grid grid-cols-6 border-b border-gray pb-3 *:font-bold">
-        <span>{purchaseData.item.label}</span>
-        <span>{purchaseData.seller.label}</span>
-        <span>{purchaseData.order.label}</span>
-        <span>{purchaseData.price.label}</span>
-        <span>{purchaseData.status.label}</span>
-        <span></span>
+      <div className="hidden md:block">
+        <Table>
+          <TableHeader>
+            <TableRow>
+              <TableHead>{purchaseData.item.label}</TableHead>
+              <TableHead>{purchaseData.seller.label}</TableHead>
+              <TableHead>{purchaseData.order.label}</TableHead>
+              <TableHead>{purchaseData.price.label}</TableHead>
+              <TableHead>{purchaseData.status.label}</TableHead>
+              <TableHead>Review</TableHead>
+            </TableRow>
+          </TableHeader>
+          <TableBody>
+            {purchaseData.item.data.map((item, index) => (
+              <TableRow key={item.name + index}>
+                <TableCell className="flex items-center gap-2 text-primary">
+                  <img
+                    src={item.img}
+                    alt={item.name}
+                    className="size-8 rounded-lg"
+                  />
+                  {item.name}
+                </TableCell>
+                <TableCell>{purchaseData.seller.data[index]}</TableCell>
+                <TableCell>{purchaseData.order.data[index]}</TableCell>
+                <TableCell>{purchaseData.price.data[index]}</TableCell>
+                <TableCell>{purchaseData.status.data[index]}</TableCell>
+                <TableCell className="text-primary cursor-pointer">
+                  {purchaseData.review.data[index]}
+                </TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
       </div>
-      <div className="grid grid-cols-6 mt-4 *:flex *:flex-col *:gap-3">
-        <div>
-          {purchaseData.item.data.map((item, index) => (
-            <div
-              className="flex items-center gap-2 text-primary border-b border-gray h-10 pb-2"
-              key={item.name + index}>
+      <div className="block md:hidden space-y-4">
+        {purchaseData.item.data.map((item, index) => (
+          <div key={item.name + index} className="border rounded-lg p-4 shadow">
+            <div className="flex items-center gap-2 text-primary">
               <img
                 src={item.img}
                 alt={item.name}
                 className="size-8 rounded-lg"
               />
-              <p>{item.name}</p>
+              <p className="font-bold">{purchaseData.item.label}:</p>{" "}
+              {item.name}
             </div>
-          ))}
-        </div>
-        <div>
-          {purchaseData.seller.data.map((item, index) => (
-            <span
-              className="border-b border-gray h-10 text-primary"
-              key={index}>
-              {item}
-            </span>
-          ))}
-        </div>
-        <div>
-          {" "}
-          {purchaseData.order.data.map((item, index) => (
-            <span
-              className="border-b border-gray h-10 text-primary"
-              key={index}>
-              {item}
-            </span>
-          ))}
-        </div>
-        <div>
-          {" "}
-          {purchaseData.price.data.map((item) => (
-            <span className="border-b border-gray h-10" key={item}>
-              {item}
-            </span>
-          ))}
-        </div>
-        <div>
-          {" "}
-          {purchaseData.status.data.map((item) => (
-            <span className="border-b border-gray h-10" key={item}>
-              {item}
-            </span>
-          ))}
-        </div>
-        <div>
-          {" "}
-          {purchaseData.review.data.map((item, index) => (
-            <span
-              className="border-b border-gray h-10 text-primary cursor-pointer"
-              key={index}>
-              {item}
-            </span>
-          ))}
-        </div>
+            <p>
+              <span className="font-bold">{purchaseData.seller.label}:</span>{" "}
+              {purchaseData.seller.data[index]}
+            </p>
+            <p>
+              <span className="font-bold">{purchaseData.order.label}:</span>{" "}
+              {purchaseData.order.data[index]}
+            </p>
+            <p>
+              <span className="font-bold">{purchaseData.price.label}:</span>{" "}
+              {purchaseData.price.data[index]}
+            </p>
+            <p>
+              <span className="font-bold">{purchaseData.status.label}:</span>{" "}
+              {purchaseData.status.data[index]}
+            </p>
+            <p className="text-primary cursor-pointer">
+              <span className="font-bold">Review:</span>{" "}
+              {purchaseData.review.data[index]}
+            </p>
+          </div>
+        ))}
       </div>
     </div>
   );

@@ -1,74 +1,85 @@
 import React from "react";
-
-import { salesData } from "@/helpers/mockData";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
 import Searchbar from "./Searchbar";
+import { salesData } from "@/helpers/mockData";
 
 const Sales = () => {
   return (
     <div className="px-10">
       <Searchbar title="My Sales" />
-      <div className="grid grid-cols-6 border-b border-gray pb-3 *:font-bold">
-        <span>{salesData.item.label}</span>
-        <span>{salesData.buyer.label}</span>
-        <span>{salesData.order.label}</span>
-        <span>{salesData.earnings.label}</span>
-        <span>{salesData.shipping.label}</span>
-        <span>{salesData.payment.label}</span>
+      <div className="hidden md:block">
+        <Table>
+          <TableHeader>
+            <TableRow>
+              <TableHead>{salesData.item.label}</TableHead>
+              <TableHead>{salesData.buyer.label}</TableHead>
+              <TableHead>{salesData.order.label}</TableHead>
+              <TableHead>{salesData.earnings.label}</TableHead>
+              <TableHead>{salesData.shipping.label}</TableHead>
+              <TableHead>{salesData.payment.label}</TableHead>
+            </TableRow>
+          </TableHeader>
+          <TableBody>
+            {salesData.item.data.map((item, index) => (
+              <TableRow key={item.name + index}>
+                <TableCell className="flex items-center gap-2 text-primary">
+                  <img
+                    src={item.img}
+                    alt={item.name}
+                    className="size-8 rounded-lg"
+                  />
+                  {item.name}
+                </TableCell>
+                <TableCell>{salesData.buyer.data[index]}</TableCell>
+                <TableCell>{salesData.order.data[index]}</TableCell>
+                <TableCell>{salesData.earnings.data[index]}</TableCell>
+                <TableCell>{salesData.shipping.data[index]}</TableCell>
+                <TableCell>{salesData.payment.data[index]}</TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
       </div>
-      <div className="grid grid-cols-6 mt-4 *:flex *:flex-col *:gap-3">
-        <div>
-          {salesData.item.data.map((item, index) => (
-            <div
-              className="flex items-center gap-2 text-primary border-b border-gray h-10 pb-2"
-              key={item.name + index}>
+      <div className="block md:hidden space-y-4">
+        {salesData.item.data.map((item, index) => (
+          <div key={item.name + index} className="border rounded-lg p-4 shadow">
+            <div className="flex items-center gap-2 text-primary">
               <img
                 src={item.img}
                 alt={item.name}
                 className="size-8 rounded-lg"
               />
-              <p>{item.name}</p>
+              <p className="font-bold">{salesData.item.label}:</p> {item.name}
             </div>
-          ))}
-        </div>
-        <div>
-          {salesData.buyer.data.map((item, index) => (
-            <span className="border-b border-gray h-10" key={index}>
-              {item}
-            </span>
-          ))}
-        </div>
-        <div>
-          {" "}
-          {salesData.order.data.map((item, index) => (
-            <span className="border-b border-gray h-10" key={index}>
-              {item}
-            </span>
-          ))}
-        </div>
-        <div>
-          {" "}
-          {salesData.earnings.data.map((item, index) => (
-            <span className="border-b border-gray h-10" key={index}>
-              {item}
-            </span>
-          ))}
-        </div>
-        <div>
-          {" "}
-          {salesData.shipping.data.map((item, index) => (
-            <span className="border-b border-gray h-10" key={index}>
-              {item}
-            </span>
-          ))}
-        </div>
-        <div>
-          {" "}
-          {salesData.payment.data.map((item, index) => (
-            <span className="border-b border-gray h-10" key={index}>
-              {item}
-            </span>
-          ))}
-        </div>
+            <p>
+              <span className="font-bold">{salesData.buyer.label}:</span>{" "}
+              {salesData.buyer.data[index]}
+            </p>
+            <p>
+              <span className="font-bold">{salesData.order.label}:</span>{" "}
+              {salesData.order.data[index]}
+            </p>
+            <p>
+              <span className="font-bold">{salesData.earnings.label}:</span>{" "}
+              {salesData.earnings.data[index]}
+            </p>
+            <p>
+              <span className="font-bold">{salesData.shipping.label}:</span>{" "}
+              {salesData.shipping.data[index]}
+            </p>
+            <p>
+              <span className="font-bold">{salesData.payment.label}:</span>{" "}
+              {salesData.payment.data[index]}
+            </p>
+          </div>
+        ))}
       </div>
     </div>
   );
