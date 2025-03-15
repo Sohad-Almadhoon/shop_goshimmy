@@ -8,7 +8,9 @@ import { BiUpload } from "react-icons/bi";
 import React from "react";
 import { useForm } from "react-hook-form";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import Account from "@/components/profile/edit/Account";
+import Account from "@/components/profile/edit/account/Account";
+import { BsEye } from "react-icons/bs";
+import Messages from "@/components/profile/edit/messages/Messages";
 
 interface FormData {
   username: string;
@@ -27,18 +29,20 @@ const EditProfile = () => {
   return (
     <Tabs
       defaultValue="tab1"
-      className="flex justify-center flex-col mt-10 mx-24">
+      className="flex justify-center flex-col mt-10 lg:mx-24 mx-3">
       <TabsList className="flex justify-center items-center gap-4">
         <TabsTrigger value="tab1">My Account</TabsTrigger>
         <TabsTrigger value="tab2">My Messages</TabsTrigger>
         <TabsTrigger value="tab3">Edit Profile</TabsTrigger>
-        <TabsTrigger value="tab4">View Public Profile</TabsTrigger>
+        <TabsTrigger value="tab4" className="font-bold text-primary">
+          <BsEye className="mr-1"/> View Public Profile
+        </TabsTrigger>
       </TabsList>
       <TabsContent value="tab1">
         <Account />
       </TabsContent>
       <TabsContent value="tab2">
-        <p>This is the content of Tab 2</p>
+        <Messages />
       </TabsContent>
       <TabsContent value="tab3">
         <div className="flex justify-center items-center my-5 flex-1 mx-24">

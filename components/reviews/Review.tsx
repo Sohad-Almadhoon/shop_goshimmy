@@ -19,8 +19,8 @@ const Review: FC<ReviewProps> = ({
             <div className="flex flex-col">
               <span className="text-primary font-bold">{username}</span>
               <div className="flex gap-1 items-center my-2 mt-1">
-                {Array.from({ length: stars }).map((_) => (
-                  <BsStarFill className="text-success" />
+                {Array.from({ length: stars }).map((_, index) => (
+                  <BsStarFill className="text-success" key={index} />
                 ))}
               </div>
             </div>

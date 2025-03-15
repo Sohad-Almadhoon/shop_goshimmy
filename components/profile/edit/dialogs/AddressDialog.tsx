@@ -21,20 +21,20 @@ import { VerifiedIcon } from "lucide-react";
 import React from "react";
 import { BiPlus, BiX } from "react-icons/bi";
 
-const CardDialog = () => {
+const AddressDialog = () => {
   return (
     <Dialog>
       <DialogTrigger>
         <div className="flex items-center gap-2 text-primary mt-3 font-bold">
           <BiPlus className="text-2xl" />
-          <span className="text-lg"> Add card information</span>
+          <span className="text-lg">Add another address</span>
         </div>
       </DialogTrigger>
 
       <DialogContent className="lg:max-w-md max-w-md p-6 rounded-lg bg-white text-black">
         <DialogHeader>
           <DialogTitle className="text-2xl font-semibold">
-            Add card information
+            Add address
           </DialogTitle>
           <DialogDescription>
             We use this for buying and selling
@@ -42,26 +42,17 @@ const CardDialog = () => {
         </DialogHeader>
         <form className="flex flex-col gap-3">
           <div>
-            <Label> Card number</Label>
-            <Input />
-          </div>
-
-          <div className="flex justify-between">
-            <div>
-              <Label> Exp date</Label>
-              <Input placeholder="3 digit number" />
-            </div>
-            <div>
-              <Label> CVV</Label>
-              <Input placeholder="3 digit number" />
-            </div>
+            <Label>Street address</Label>
+            <Input
+              placeholder="123 main st"
+            />
           </div>
           <div>
             <Label>City</Label>
-            <Input />
+            <Input placeholder="City name" />
           </div>
-          <div className="flex justify-between">
-            <div>
+          <div className="flex  gap-5">
+            <div className="flex-1">
               <Label>State</Label>
               <Select>
                 <SelectTrigger>
@@ -74,12 +65,16 @@ const CardDialog = () => {
                 </SelectContent>
               </Select>
             </div>
-            <div>
+            <div className="flex-1">
               <Label>Zip</Label>
               <Input placeholder="3 digit number" />
             </div>
           </div>
-          <div className="flex justify-end mt-5">
+          <div className="flex justify-between mt-5">
+            <span className="flex gap-2 items-center">
+              <VerifiedIcon className="text-primary" />
+              Use as billing address
+            </span>
             <Button>Save</Button>
           </div>
         </form>
@@ -91,4 +86,4 @@ const CardDialog = () => {
   );
 };
 
-export default CardDialog;
+export default AddressDialog;

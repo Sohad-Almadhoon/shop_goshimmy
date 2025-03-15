@@ -12,7 +12,7 @@ import { listData } from "@/helpers/mockData";
 
 const Listing = () => {
   return (
-    <div className="px-10">
+    <div className="lg:px-10 px-3">
       <Searchbar title="My Listings" />
       <div className="hidden md:block">
         <Table>
@@ -43,29 +43,35 @@ const Listing = () => {
           </TableBody>
         </Table>
       </div>
-      <div className="block md:hidden space-y-4">
+      <div className="block md:hidden space-y-4 border-t border-gray pt-3">
         {listData.item.data.map((item, index) => (
-          <div key={item.name + index} className="border rounded-lg p-4 shadow">
-            <div className="flex items-center gap-2 text-primary">
-              <img
-                src={item.img}
-                alt={item.name}
-                className="size-8 rounded-lg"
-              />
-              <p className="font-bold">{listData.item.label}:</p> {item.name}
+          <div className="flex gap-4 border-b border-gray pb-3" key={index}>
+            <img
+              src={item.img}
+              alt={item.name}
+              className="size-12 rounded-lg flex-2 object-cover"
+            />
+            <div key={item.name + index} className=" flex-1">
+              <div className="flex items-center w-full">
+                <p className="font-bold flex-1">{listData.item.label}</p>{" "}
+                <p className="text-primary font-bold flex-1">{item.name}</p>
+              </div>
+              <p className="flex">
+                <span className="font-bold flex-1">{listData.price.label}</span>{" "}
+                <span className="flex-1">{listData.price.data[index]}</span>
+              </p>
+              <p className="flex">
+                <span className="font-bold flex-1">{listData.size.label}</span>{" "}
+                <span className="flex-1">{listData.size.data[index]}</span>
+              </p>
+
+              <p className="flex">
+                <span className="font-bold flex-1">
+                  {listData.status.label}
+                </span>{" "}
+                <span className="flex-1">{listData.status.data[index]}</span>
+              </p>
             </div>
-            <p>
-              <span className="font-bold">{listData.price.label}:</span>{" "}
-              {listData.price.data[index]}
-            </p>
-            <p>
-              <span className="font-bold">{listData.size.label}:</span>{" "}
-              {listData.size.data[index]}
-            </p>
-            <p>
-              <span className="font-bold">{listData.status.label}:</span>{" "}
-              {listData.status.data[index]}
-            </p>
           </div>
         ))}
       </div>

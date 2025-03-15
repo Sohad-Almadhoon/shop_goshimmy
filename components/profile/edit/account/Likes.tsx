@@ -4,9 +4,9 @@ import { Card } from "@/components/ui/card";
 
 const Likes = () => {
   return (
-    <div className="p-5">
+    <div className="lg:px-10 px-3">
       <Searchbar title="My Likes" />
-      <div className="grid lg:grid-cols-4 grid-cols-2 gap-5 pb-5 lg:px-0 px-5">
+      <div className="grid lg:grid-cols-4 grid-cols-2 gap-5 pb-5">
         {Array.from({ length: 7 }).map((_, index) => (
           <Card
             key={index}

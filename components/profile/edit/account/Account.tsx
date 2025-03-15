@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "../../ui/tabs";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "../../../ui/tabs";
 import { BiLike, BiPurchaseTag, BiSmile, BiSolidAnalyse } from "react-icons/bi";
 import { BsPerson } from "react-icons/bs";
 import Purchase from "./Purchase";
@@ -19,16 +19,15 @@ import {
 const Account = () => {
   const [selectedTab, setSelectedTab] = useState("tab1");
 
-  const handleSelectChange = (value) => {
+  const handleSelectChange = (value: string) => {
     setSelectedTab(value);
   };
 
   return (
-    <div className="min-h-screen pb-16">
-      {/* Mobile View: Shadcn Select */}
-      <div className="block md:hidden p-5">
+    <div className="min-h-screen lg:pb-16 pb-4">
+      <div className="block md:hidden p-4">
         <Select value={selectedTab} onValueChange={handleSelectChange}>
-          <SelectTrigger className="w-full p-2 border rounded">
+          <SelectTrigger>
             <SelectValue placeholder="Select Tab" />
           </SelectTrigger>
           <SelectContent>
@@ -47,8 +46,8 @@ const Account = () => {
       <Tabs
         value={selectedTab}
         onValueChange={setSelectedTab}
-        className="hidden md:flex min-h-screen bg-lightGray flex">
-        <TabsList className="flex min-w-64 p-5 flex-col items-start">
+        className="hidden md:flex min-h-screen bg-lightGray">
+        <TabsList className="flex min-w-64 p-5 flex-col items-start *:flex *:gap-1 *:items-center">
           <TabsTrigger value="tab1">
             <BiPurchaseTag /> My Purchases
           </TabsTrigger>
@@ -84,7 +83,7 @@ const Account = () => {
             <Likes />
           </TabsContent>
           <TabsContent value="tab5" className="flex-3">
-            {/* Your content for GoShimmy Bucks */}
+            <span>GoShimmy Bucks</span>
           </TabsContent>
           <TabsContent value="tab6" className="flex-3">
             <Settings />
@@ -93,7 +92,7 @@ const Account = () => {
       </Tabs>
 
       {/* Mobile Content Rendering */}
-      <div className="block md:hidden mt-5">
+      <div className="block md:hidden">
         {selectedTab === "tab1" && <Purchase />}
         {selectedTab === "tab2" && <Sales />}
         {selectedTab === "tab3" && <Listing />}

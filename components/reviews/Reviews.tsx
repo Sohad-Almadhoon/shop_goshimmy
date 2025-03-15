@@ -10,9 +10,8 @@ const Reviews = () => {
       {dummyReviews.map((item) => (
         <Review key={item.id} {...item} />
       ))}
-      <div className="flex items-center justify-center my-6 gap-5">
+      <div className="flex items-center justify-end my-6 gap-5">
         <Button variant="outline" className="border-gray font-bold">See more </Button>
-        <ReviewDialog />
       </div>
     </div>
   );

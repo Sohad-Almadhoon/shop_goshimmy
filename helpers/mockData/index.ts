@@ -95,3 +95,37 @@ export const purchaseData = {
         data: ["Leave a review", "Leave a review"]
     }
 }
+export const cancelMembership = [
+    "I no longer need 4+ o the same costume or item",
+    "There is not enough selection o Example Listings",
+    "It is too hard to find the costume or item I am looking fo on GoShimmy",
+    "Membership is too confusing",
+    "Membership is too expensive",
+    "Membership doesn't offer enough value",
+    "Other"
+];
+export const messages = [
+    {
+        img: "/images/palle.jpg",
+        username: " First and Last Name",
+        content: " That sounds great thank you..."
+    },
+    {
+        img: "/images/palle.jpg",
+        username: " First and Last Name",
+        content: " That sounds great thank you..."
+    }
+    , {
+        img: "/images/palle.jpg",
+        username: " First and Last Name",
+        content: " That sounds great thank you..."
+    }, {
+        img: "/images/palle.jpg",
+        username: " First and Last Name",
+        content: " That sounds great thank you..."
+    }, {
+        img: "/images/palle.jpg",
+        username: " First and Last Name",
+        content: " That sounds great thank you..."
+    }
+]

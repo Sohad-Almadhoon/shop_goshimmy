@@ -4,9 +4,10 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import React from "react";
 import { BiPlus, BiTrash } from "react-icons/bi";
-import CardDialog from "./CardDialog";
-import AddressDialog from "./AddressDialog";
-import CancelMembership from "./CancelMembership";
+import CardDialog from "../dialogs/CardDialog";
+import AddressDialog from "../dialogs/AddressDialog";
+import CancelMembership from "../dialogs/CancelMembershipDialog";
+import { Toggle } from "@/components/ui/toggle";
 
 const Settings = () => {
   return (
@@ -15,7 +16,7 @@ const Settings = () => {
       <div className="my-5">
         <h3 className="font-bold">Bank Info</h3>
         <hr className="border-b border-gray my-3" />
-        <div className="flex justify-between max-w-xl">
+        <div className="flex justify-between max-w-xl lg:flex-row flex-col">
           <div>
             <span className="font-bold"> Card information</span>
             <div className="flex gap-5 items-center">
@@ -53,19 +54,31 @@ const Settings = () => {
         <form className="flex flex-col gap-3 pb-4">
           <div>
             <Label className="font-bold">Full Name</Label>
-            <Input className="w-96" placeholder="Jane Doe" />
+            <Input
+              className="w-96 placeholder:text-black"
+              placeholder="Jane Doe"
+            />
           </div>
           <div>
             <Label className="font-bold">Email</Label>
-            <Input className="w-96" placeholder="janedoe@gmail.com" />
+            <Input
+              className="w-96 placeholder:text-black"
+              placeholder="janedoe@gmail.com"
+            />
           </div>
           <div>
             <Label className="font-bold">Username</Label>
-            <Input className="w-96" placeholder="JaneDoeBallet" />
+            <Input
+              className="w-96 placeholder:text-black"
+              placeholder="JaneDoeBallet"
+            />
           </div>
           <div>
             <Label className="font-bold"> Phone number</Label>
-            <Input className="w-96" placeholder=" (555) 555-5555" />
+            <Input
+              className="w-96 placeholder:text-black"
+              placeholder=" (555) 555-5555"
+            />
           </div>
           <span className="text-primary cursor-pointer font-semibold">
             {" "}
@@ -73,7 +86,7 @@ const Settings = () => {
           </span>
           <Button className="w-fit">Save</Button>
         </form>
-        <div className="mt-3 pb-6">
+        <div className="mt-3 lg:pb-6 pb-2">
           <h3 className="font-bold"> Ensemble subscription</h3>
           <hr className="border-b border-gray my-3" />
           <p> You can cancel your ensemble subscription any time</p>

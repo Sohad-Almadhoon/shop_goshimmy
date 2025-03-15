@@ -13,7 +13,7 @@ export default function SearchInput({
   className,
 }: SearchInputProps) {
   return (
-    <div className="flex w-fit max-w-sm items-center bg-lightGray rounded-xl px-2.5 py-.5">
+    <div className="flex items-center bg-lightGray rounded-xl px-2.5 py-.5">
       <SearchIcon className="h-4 w-4 mr-2.5" />
       <Input
         type="search"
