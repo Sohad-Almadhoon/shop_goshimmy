@@ -7,11 +7,11 @@ import {
   DialogHeader,
   DialogTitle,
   DialogDescription,
-} from "./ui/dialog";
+} from "../../../ui/dialog";
 import { BiX } from "react-icons/bi";
 import { BsStarFill } from "react-icons/bs";
 import { PlusIcon } from "lucide-react";
-import { Button } from "./ui/button";
+import { Button } from "../../../ui/button";
 
 const ReviewDialog = () => {
   return (

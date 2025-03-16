@@ -8,6 +8,7 @@ import CardDialog from "../dialogs/CardDialog";
 import AddressDialog from "../dialogs/AddressDialog";
 import CancelMembership from "../dialogs/CancelMembershipDialog";
 import { Toggle } from "@/components/ui/toggle";
+import { Switch } from "@/components/ui/switch";
 
 const Settings = () => {
   return (
@@ -44,9 +45,18 @@ const Settings = () => {
       <div className="flex flex-col">
         <h3 className="font-bold"> Notifications</h3>
         <hr className="border-b border-gray mt-3" />
-        <p className="mt-2"> Email me when someone purchases my item</p>
-        <p className="mt-2"> Email me when someone sends me a message</p>
-        <p className="mt-2"> Email me with news and promotions</p>
+        <p className="mt-2">
+          <Switch checked={true} /> Email me when someone purchases my item
+        </p>
+        <p className="mt-2">
+          {" "}
+          <Switch checked={true} /> Email me when someone sends me a message
+        </p>
+        <p className="mt-2">
+          {" "}
+          <Switch checked={true} />
+          Email me with news and promotions
+        </p>
       </div>
       <div className="mt-3">
         <h3 className="font-bold"> Account Settings</h3>

@@ -10,7 +10,6 @@ import { Button } from "@/components/ui/button";
 import Following from "./Following";
 import Link from "next/link";
 const ProfileInfo = () => {
-
   return (
     <div className="flex justify-center items-center flex-col">
       <img

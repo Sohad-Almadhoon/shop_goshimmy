@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/table";
 import Searchbar from "./Searchbar";
 import { purchaseData } from "@/helpers/mockData";
-import ReviewDialog from "@/components/ReviewDialog";
+import ReviewDialog from "@/components/profile/edit/dialogs/ReviewDialog";
 
 const Purchase = () => {
   return (
@@ -42,7 +42,7 @@ const Purchase = () => {
                 <TableCell>{purchaseData.order.data[index]}</TableCell>
                 <TableCell>{purchaseData.price.data[index]}</TableCell>
                 <TableCell>{purchaseData.status.data[index]}</TableCell>
-                <TableCell >
+                <TableCell>
                   <ReviewDialog />
                 </TableCell>
               </TableRow>

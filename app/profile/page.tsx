@@ -10,8 +10,8 @@ import {
 import { Card } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Reviews from "@/components/reviews/Reviews";
-import ProfileInfo from "@/components/ProfileInfo";
-import Filters from "@/components/Filters";
+import ProfileInfo from "@/components/profile/ProfileInfo";
+import Filters from "@/components/profile/Filters";
 
 const ProfilePage = () => {
   const [activeTab, setActiveTab] = useState("tab1");

@@ -9,7 +9,7 @@ import {
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
 import { accordionItems } from "@/helpers/data";
-import BrandSearch from "@/components/BrandSearch";
+import BrandSearch from "@/components/profile/BrandSearch";
 import {
   Select,
   SelectContent,
