@@ -1,4 +1,5 @@
-import React from "react";
+//@ts-nocheck
+import React, { useState } from "react";
 import {
   Accordion,
   AccordionContent,
@@ -16,87 +17,134 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { Button } from "@/components/ui/button";
+import { IoClose } from "react-icons/io5";
 
 const Filters = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [selectedFilters, setSelectedFilters] = useState({});
+
+  const toggleFilters = () => setIsOpen(!isOpen);
+  const clearFilters = () => setSelectedFilters({});
+
   return (
-    <div className="max-w-64 min-w-64 lg:block hidden">
-      <div className="flex flex-col gap-4">
-        <RadioGroup>
-          {["Rehearsal Wear", "Costumes"].map((item, index) => (
-            <div key={index} className="flex items-center gap-2">
-              <RadioGroupItem id={`radio-${index + 1}`} value={item} />
-              <Label htmlFor={`radio-${index + 1}`}>{item}</Label>
-            </div>
-          ))}
-        </RadioGroup>
-        <hr />
+    <>
+      {/* Small screen Filters Button */}
+      <div className="lg:hidden flex justify-end mb-4">
+        <Button onClick={toggleFilters}>Filters</Button>
       </div>
-      <Accordion type="single" collapsible>
-        {accordionItems.map(({ id, label, content, isColor, isBrands }) => (
-          <AccordionItem value={id} key={id}>
-            <AccordionTrigger>{label}</AccordionTrigger>
-            <AccordionContent>
-              {isBrands ? (
-                <BrandSearch />
-              ) : isColor ? (
-                <RadioGroup className="grid grid-cols-4 gap-3">
-                  {content.map((color) => (
-                    <div
-                      key={color}
-                      className="flex items-center justify-center">
-                      <RadioGroupItem
-                        id={color}
-                        value={color}
-                        className="h-6 w-6"
-                        style={{ backgroundColor: color }}
-                      />
-                    </div>
-                  ))}
-                </RadioGroup>
-              ) : (
-                <RadioGroup className="space-y-3">
-                  {content.map((item) =>
-                    typeof item === "string" ? (
-                      <div key={item} className="flex items-center space-x-3">
-                        <RadioGroupItem id={item} value={item} />
-                        <Label htmlFor={item}>{item}</Label>
-                      </div>
-                    ) : (
-                      <div
-                        key={item.id}
-                        className="flex items-center space-x-3">
-                        <RadioGroupItem id={item.id} value={item.id} />
-                        <Label htmlFor={item.id}>{item.label}</Label>
-                      </div>
-                    )
-                  )}
-                </RadioGroup>
+
+      {/* Overlay for Filters */}
+      {isOpen && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+          <div className="bg-white p-6 rounded-lg w-11/12 max-w-md shadow-lg relative">
+            <button onClick={toggleFilters} className="absolute top-2 right-2">
+              <IoClose className="text-2xl" />
+            </button>
+            <h2 className="text-lg font-bold mb-4">Filters</h2>
+            <Accordion type="single" collapsible>
+              {accordionItems.map(
+                ({ id, label, content, isColor, isBrands }) => (
+                  <AccordionItem value={id} key={id}>
+                    <AccordionTrigger>{label}</AccordionTrigger>
+                    <AccordionContent>
+                      {isBrands ? (
+                        <BrandSearch />
+                      ) : isColor ? (
+                        <RadioGroup className="grid grid-cols-4 gap-3">
+                          {content.map((color) => (
+                            <div
+                              key={color}
+                              className="flex items-center justify-center">
+                              <RadioGroupItem
+                                id={color}
+                                value={color}
+                                className="h-6 w-6"
+                                style={{ backgroundColor: color }}
+                              />
+                            </div>
+                          ))}
+                        </RadioGroup>
+                      ) : (
+                        <RadioGroup className="space-y-3">
+                          {content.map((item) => (
+                            <div
+                              key={item.id || item}
+                              className="flex items-center space-x-3">
+                              <RadioGroupItem
+                                id={item.id || item}
+                                value={item.id || item}
+                              />
+                              <Label htmlFor={item.id || item}>
+                                {item.label || item}
+                              </Label>
+                            </div>
+                          ))}
+                        </RadioGroup>
+                      )}
+                    </AccordionContent>
+                  </AccordionItem>
+                )
               )}
-            </AccordionContent>
-          </AccordionItem>
-        ))}
-      </Accordion>
-    </div>
+            </Accordion>
+            <div className="flex justify-between mt-4">
+              <Button onClick={clearFilters} variant="outline">
+                Clear Filters
+              </Button>
+              <Button onClick={toggleFilters}>Apply</Button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Desktop Filters */}
+      <div className="max-w-64 min-w-64 lg:block hidden">
+        <Accordion type="single" collapsible>
+          {accordionItems.map(({ id, label, content, isColor, isBrands }) => (
+            <AccordionItem value={id} key={id}>
+              <AccordionTrigger>{label}</AccordionTrigger>
+              <AccordionContent>
+                {isBrands ? (
+                  <BrandSearch />
+                ) : isColor ? (
+                  <RadioGroup className="grid grid-cols-4 gap-3">
+                    {content.map((color) => (
+                      <div
+                        key={color}
+                        className="flex items-center justify-center">
+                        <RadioGroupItem
+                          id={color}
+                          value={color}
+                          className="h-6 w-6"
+                          style={{ backgroundColor: color }}
+                        />
+                      </div>
+                    ))}
+                  </RadioGroup>
+                ) : (
+                  <RadioGroup className="space-y-3">
+                    {content.map((item) => (
+                      <div
+                        key={item.id || item}
+                        className="flex items-center space-x-3">
+                        <RadioGroupItem
+                          id={item.id || item}
+                          value={item.id || item}
+                        />
+                        <Label htmlFor={item.id || item}>
+                          {item.label || item}
+                        </Label>
+                      </div>
+                    ))}
+                  </RadioGroup>
+                )}
+              </AccordionContent>
+            </AccordionItem>
+          ))}
+        </Accordion>
+      </div>
+    </>
   );
 };
 
 export default Filters;
-
-export const Filter = () => {
-  return (
-    <div className="flex justify-between items-center mb-8">
-      <span className="font-bold">Filter By</span>
-      <div className="flex items-center gap-6 justify-end">
-        <span className="text-sm whitespace-nowrap font-semibold">Sort by</span>
-        <Select>
-          <SelectTrigger>
-            <SelectValue placeholder="Popular" />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectItem value="popular">Popular</SelectItem>
-          </SelectContent>
-        </Select>
-      </div>
-    </div>
-  );
-};

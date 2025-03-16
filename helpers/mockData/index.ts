@@ -107,25 +107,99 @@ export const cancelMembership = [
 export const messages = [
     {
         img: "/images/palle.jpg",
-        username: " First and Last Name",
-        content: " That sounds great thank you..."
+        username: "First and Last Name",
+        content: "That sounds great thank you...",
+        chat: [
+            {
+                content: "Hello! How are you?",
+                timestamp: "12/14/12 12:00PM",
+                sentByUser: true,
+                img: "/images/palle.jpg",
+            },
+            {
+                content: "I'm doing well, thanks for asking!",
+                timestamp: "12/14/12 12:05PM",
+                sentByUser: false,
+                img: "/images/palle.jpg",
+            },
+        ],
     },
     {
         img: "/images/palle.jpg",
-        username: " First and Last Name",
-        content: " That sounds great thank you..."
-    }
-    , {
+        username: "First and Last Name",
+        content: "That sounds great thank you...",
+        chat: [
+            {
+                content: "Are you available for a meeting?",
+                timestamp: "12/14/12 02:00PM",
+                sentByUser: true,
+                img: "/images/palle.jpg",
+            },
+            {
+                content: "Yes, I am. When would work for you?",
+                timestamp: "12/14/12 02:05PM",
+                sentByUser: false,
+                img: "/images/palle.jpg",
+            },
+        ],
+    },
+    {
         img: "/images/palle.jpg",
-        username: " First and Last Name",
-        content: " That sounds great thank you..."
-    }, {
+        username: "First and Last Name",
+        content: "That sounds great thank you...",
+        chat: [
+            {
+                content: "Are we still on for tomorrow?",
+                timestamp: "12/14/12 04:00PM",
+                sentByUser: true,
+                img: "/images/palle.jpg",
+            },
+            {
+                content: "Yes, looking forward to it!",
+                timestamp: "12/14/12 04:10PM",
+                sentByUser: false,
+                img: "/images/palle.jpg",
+            },
+        ],
+    },
+    {
         img: "/images/palle.jpg",
-        username: " First and Last Name",
-        content: " That sounds great thank you..."
-    }, {
+        username: "First and Last Name",
+        content: "That sounds great thank you...",
+        chat: [
+            {
+                content: "Can you send me the files?",
+                timestamp: "12/14/12 06:00PM",
+                sentByUser: true,
+                img: "/images/palle.jpg",
+            },
+            {
+                content: ` Buyers will receive a refund if their order was not shipped or
+                if it did not arrive at its destination, but the refund must be
+                requested within 90 days of purchase.`,
+                timestamp: "12/14/12 06:05PM",
+                sentByUser: false,
+                img: "/images/palle.jpg",
+            },
+        ],
+    },
+    {
         img: "/images/palle.jpg",
-        username: " First and Last Name",
-        content: " That sounds great thank you..."
-    }
-]
+        username: "First and Last Name",
+        content: "That sounds great thank you...",
+        chat: [
+            {
+                content: "Please review the document I sent.",
+                timestamp: "12/14/12 08:00PM",
+                sentByUser: true,
+                img: "/images/palle.jpg",
+            },
+            {
+                content: "I’ll take a look and get back to you.",
+                timestamp: "12/14/12 08:05PM",
+                sentByUser: false,
+                img: "/images/palle.jpg",
+            },
+        ],
+    },
+];
