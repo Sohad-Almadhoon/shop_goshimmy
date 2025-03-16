@@ -1,10 +1,10 @@
 "use client";
+import DeleteDialog from "@/components/profile/edit/dialogs/DeleteDialog";
 import SearchInput from "@/components/shared/SearchInput";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { messages } from "@/helpers/mockData";
 import { useParams } from "next/navigation";
-import { BiTrash } from "react-icons/bi";
 import { twMerge } from "tailwind-merge";
 
 const ChatPage = () => {
@@ -23,7 +23,7 @@ const ChatPage = () => {
             />
             {message.username}
           </span>
-          <BiTrash className="text-primary border-2 text-4xl p-1 rounded-full border-primary" />
+          <DeleteDialog />
         </div>
         <SearchInput
           onChange={() => {}}

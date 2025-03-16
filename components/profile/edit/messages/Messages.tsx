@@ -8,6 +8,7 @@ import React from "react";
 import { BiTrash } from "react-icons/bi";
 import { HiArrowRight } from "react-icons/hi2";
 import { twMerge } from "tailwind-merge";
+import DeleteDialog from "../dialogs/DeleteDialog";
 
 const Messages = () => {
   return (
@@ -59,7 +60,7 @@ const Messages = () => {
                       placeholder=" Search messages"
                       value=""
                     />
-                    <BiTrash className="text-primary border-2 text-4xl p-1 rounded-full border-primary" />
+                    <DeleteDialog />
                   </div>
                 </div>
                 <div className="flex-1 overflow-y-auto max-h-[500px] pb-24 mt-5">
