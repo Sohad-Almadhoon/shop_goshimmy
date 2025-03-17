@@ -1,41 +1,61 @@
+"use client";
 import SearchInput from "@/components/shared/SearchInput";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Textarea } from "@/components/ui/textarea";
 import { messages } from "@/helpers/mockData";
 import Link from "next/link";
-import React from "react";
-import { BiTrash } from "react-icons/bi";
+import React, { useState } from "react";
 import { HiArrowRight } from "react-icons/hi2";
 import { twMerge } from "tailwind-merge";
 import DeleteDialog from "../dialogs/DeleteDialog";
 
 const Messages = () => {
+  const [selectedTab, setSelectedTab] = useState("tab1");
+
+  const handleSelectChange = (value: string) => {
+    setSelectedTab(value);
+  };
+  const truncateText = (text: string, length: number = 70) => {
+    return text.length > length ? `${text.substring(0, length)}...` : text;
+  };
   return (
     <div className="min-h-screen">
-      <Tabs className="lg:flex hidden">
-        <TabsList className="flex min-w-64 min-h-screen bg-lightGray flex-col items-start *:flex *:gap-1 *:items-center p-5">
-          {messages.map((msg, index) => (
-            <TabsTrigger value={`tab${index + 1}`} key={index}>
-              <div className="flex gap-3 items-center">
-                <img
-                  src={msg.img}
-                  alt=""
-                  className="size-10 object-cover rounded-full"
-                />
-                <div className="flex flex-col items-start gap-2 text-sm">
-                  <span className="font-bold">{msg.username}</span>
-                  <span className="text-bodyLight">
-                    {" "}
-                    {msg.content.length > 100
-                      ? msg.content.substring(0, 70)
-                      : msg.content}
-                    ...
-                  </span>
+      <Tabs
+        className="lg:flex hidden"
+        value={selectedTab}
+        onValueChange={handleSelectChange}
+        defaultValue="tab1">
+        <TabsList className="flex pt-5 min-w-64 min-h-screen bg-lightGray shadow-lg flex-col items-start gap-1">
+          {messages.map((msg, index) => {
+            const tabValue = `tab${index + 1}`;
+            return (
+              <TabsTrigger
+                value={tabValue}
+                key={index}
+                className={twMerge(
+                  selectedTab === tabValue &&
+                    "bg-white transition-all duration-300",
+                  "w-full flex justify-start gap-3 px-3 py-2"
+                )}
+                aria-label={`Tab for ${msg.username}`}>
+                <div className="flex gap-3 items-center">
+                  <img
+                    src={msg.img}
+                    alt={`${msg.username}'s avatar`} // improve alt text for accessibility
+                    className="size-10 object-cover rounded-full"
+                  />
+                  <div className="flex flex-col items-start gap-2 text-sm">
+                    <span className="font-bold">{msg.username}</span>
+                    <span className="text-bodyLight">
+                      {truncateText(msg.content)}{" "}
+                      {/* Refactor text truncation */}
+                    </span>
+                  </div>
                 </div>
-              </div>
-            </TabsTrigger>
-          ))}
+              </TabsTrigger>
+            );
+          })}
         </TabsList>
         <div className="bg-white shadow-lg w-full">
           {messages.map((item, index) => (

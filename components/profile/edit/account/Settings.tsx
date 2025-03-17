@@ -46,15 +46,15 @@ const Settings = () => {
         <h3 className="font-bold"> Notifications</h3>
         <hr className="border-b border-gray mt-3" />
         <p className="mt-2">
-          <Switch checked={true} /> Email me when someone purchases my item
+          <Switch className="mr-2" /> Email me when someone purchases my item
         </p>
         <p className="mt-2">
           {" "}
-          <Switch checked={true} /> Email me when someone sends me a message
+          <Switch className="mr-2" /> Email me when someone sends me a message
         </p>
         <p className="mt-2">
           {" "}
-          <Switch checked={true} />
+          <Switch className="mr-2" />
           Email me with news and promotions
         </p>
       </div>

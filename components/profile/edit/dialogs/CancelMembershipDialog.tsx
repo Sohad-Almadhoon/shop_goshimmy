@@ -34,8 +34,8 @@ const CancelMembershipDialog = () => {
         <form>
           <h3 className="text-lg mb-3 font-bold">Select all that apply</h3>
           <RadioGroup className="flex flex-col gap-3">
-            {cancelMembership.map((item) => (
-              <div className="flex items-center gap-3">
+            {cancelMembership.map((item , index) => (
+              <div className="flex items-center gap-3" key={index}>
                 <RadioGroupItem value={item} key={item} />
                 <Label className="font-medium text-sm mb-0">{item}</Label>
               </div>

@@ -1,3 +1,6 @@
+import { BiLike, BiPurchaseTag, BiSmile, BiSolidAnalyse } from "react-icons/bi";
+import { BsPerson } from "react-icons/bs";
+import { SettingsIcon } from "lucide-react";
 export const listData = {
     item: {
         label: "Item",
@@ -202,4 +205,17 @@ export const messages = [
             },
         ],
     },
+];
+export const tabs = [
+    { value: "tab1", label: "My Purchases", icon: BiPurchaseTag  },
+    { value: "tab2", label: "My Sales", icon: BiSolidAnalyse },
+    { value: "tab3", label: "My Listings", icon: BsPerson  },
+    { value: "tab4", label: "My Likes", icon: BiLike  },
+    { value: "tab5", label: "GoShimmy Bucks", icon: BiSmile  },
+    {
+        value: "tab6",
+        label: "Settings",
+        icon: SettingsIcon,
+    },
+    { value: "tab7", label: "Log out", icon: null },
 ];

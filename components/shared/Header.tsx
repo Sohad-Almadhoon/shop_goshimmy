@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
-import { BiBell, BiCart } from "react-icons/bi";
+import { BiBell, BiCart, BiMenu } from "react-icons/bi";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import SearchInput from "./SearchInput";
 import { Button } from "../ui/button";
 import {
@@ -13,23 +14,52 @@ import { profileMenuItems } from "@/helpers/data";
 
 const Header = () => {
   return (
-    <header className="lg:px-24 px-8 py-8 lg:py-3">
-      <div className="flex justify-between lg:items-center lg:flex-row flex-col lg:gap-12 gap-3 py-2">
-        <div className="flex lg:items-start items-center flex-col">
+    <header className="lg:px-24 px-8 py-6">
+      <div className="flex justify-between items-center">
+        {/* Mobile Menu Button */}
+        <div className="lg:hidden">
+          <Sheet>
+            <SheetTrigger asChild>
+              <BiMenu className="text-primary w-8 h-8 cursor-pointer" />
+            </SheetTrigger>
+            <SheetContent side="left" className="p-4">
+              <nav className="flex flex-col gap-4 text-lg">
+                <Link href="/about">New Arrivals</Link>
+                <Link href="/about">Rehearsal Wear</Link>
+                <Link href="/about">Costumes</Link>
+                <Link href="/about">Shoes</Link>
+                <Link href="/about">Accessories</Link>
+                <Link href="/about">Shop all</Link>
+                <hr />
+                <Link href="/membership">Ensemble Membership</Link>
+                <Link href="/about">How It Works</Link>
+                <Link href="/payment">
+                  <Button className="w-full">Sell</Button>
+                </Link>
+              </nav>
+            </SheetContent>
+          </Sheet>
+        </div>
+
+        {/* Logo */}
+        <div className="flex flex-col">
           <span className="text-primary text-3xl font-bold">Go Shimmy</span>
           <span className="text-primary text-xs font-medium">
             The Dancewear Marketplace
           </span>
         </div>
 
-        <SearchInput
-          placeholder="Search"
-          value=""
-          onChange={() => {
-            console.log("search");
-          }}
-        />
-        <div className="flex items-center gap-2 justify-end">
+        {/* Search Input */}
+        <div className="hidden lg:block">
+          <SearchInput
+            placeholder="Search"
+            value=""
+            onChange={() => console.log("search")}
+          />
+        </div>
+
+        {/* Icons */}
+        <div className="flex items-center gap-3">
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <BiBell className="cursor-pointer border-2 border-primary text-primary p-1 rounded-full w-8 h-8" />
@@ -64,9 +94,10 @@ const Header = () => {
           <BiCart className="border-2 border-primary text-primary p-1 rounded-full w-8 h-8" />
         </div>
       </div>
-      <hr />
-      <div className="flex lg:flex-row lg:justify-between flex-col mt-2">
-        <div className="flex items-start font-semibold lg:flex-row flex-col gap-3 lg:text-inherit text-sm mb-3 lg:m-0">
+
+      {/* Desktop Navigation */}
+      <nav className="hidden lg:flex justify-between items-center mt-3">
+        <div className="flex gap-4 text-sm font-semibold">
           <Link href="/about">New Arrivals</Link>
           <Link href="/about">Rehearsal Wear</Link>
           <Link href="/about">Costumes</Link>
@@ -74,15 +105,14 @@ const Header = () => {
           <Link href="/about">Accessories</Link>
           <Link href="/about">Shop all</Link>
         </div>
-        <hr className="my-4 lg:hidden block" />
-        <div className="flex *:text-primary lg:flex-row font-semibold lg:items-center items-start flex-col gap-3 lg:text-inherit text-sm">
+        <div className="flex gap-4 text-sm font-semibold items-center">
           <Link href="/membership">Ensemble Membership</Link>
           <Link href="/about">How It Works</Link>
           <Link href="/payment">
             <Button className="px-8">Sell</Button>
           </Link>
         </div>
-      </div>
+      </nav>
     </header>
   );
 };

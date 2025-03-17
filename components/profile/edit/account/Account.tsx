@@ -1,13 +1,12 @@
 import React, { useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../../../ui/tabs";
-import { BiLike, BiPurchaseTag, BiSmile, BiSolidAnalyse } from "react-icons/bi";
-import { BsPerson } from "react-icons/bs";
+
 import Purchase from "./Purchase";
 import Sales from "./Sales";
 import Listing from "./Listing";
 import Likes from "./Likes";
 import Settings from "./Settings";
-import { SettingsIcon } from "lucide-react";
+
 import {
   SelectItem,
   SelectTrigger,
@@ -15,6 +14,8 @@ import {
   Select,
   SelectContent,
 } from "@/components/ui/select";
+import { twMerge } from "tailwind-merge";
+import { tabs } from "@/helpers/mockData";
 
 const Account = () => {
   const [selectedTab, setSelectedTab] = useState("tab1");
@@ -25,19 +26,19 @@ const Account = () => {
 
   return (
     <div className="min-h-screen lg:pb-16 pb-4">
+      {/* Mobile View: Dropdown */}
       <div className="block md:hidden p-4">
         <Select value={selectedTab} onValueChange={handleSelectChange}>
-          <SelectTrigger>
+          <SelectTrigger className="border border-gray-300 p-2 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary">
             <SelectValue placeholder="Select Tab" />
           </SelectTrigger>
-          <SelectContent>
-            <SelectItem value="tab1">My Purchases</SelectItem>
-            <SelectItem value="tab2">My Sales</SelectItem>
-            <SelectItem value="tab3">My Listings</SelectItem>
-            <SelectItem value="tab4">My Likes</SelectItem>
-            <SelectItem value="tab5">GoShimmy Bucks</SelectItem>
-            <SelectItem value="tab6">Settings</SelectItem>
-            <SelectItem value="tab7">Log out</SelectItem>
+          <SelectContent className="bg-white shadow-md rounded-md">
+            {tabs.map((tab) => (
+              <SelectItem key={tab.value} value={tab.value}>
+                <span className="mr-2">{React.createElement(tab.icon!)}</span>
+                {tab.label}
+              </SelectItem>
+            ))}
           </SelectContent>
         </Select>
       </div>
@@ -46,48 +47,38 @@ const Account = () => {
       <Tabs
         value={selectedTab}
         onValueChange={setSelectedTab}
-        className="hidden md:flex min-h-screen bg-lightGray">
-        <TabsList className="flex min-w-64 p-5 flex-col items-start *:flex *:gap-1 *:items-center">
-          <TabsTrigger value="tab1">
-            <BiPurchaseTag /> My Purchases
-          </TabsTrigger>
-          <TabsTrigger value="tab2">
-            <BiSolidAnalyse /> My Sales
-          </TabsTrigger>
-          <TabsTrigger value="tab3">
-            <BsPerson /> My Listings
-          </TabsTrigger>
-          <TabsTrigger value="tab4">
-            <BiLike /> My Likes
-          </TabsTrigger>
-          <TabsTrigger value="tab5">
-            <BiSmile /> GoShimmy Bucks
-          </TabsTrigger>
-          <TabsTrigger value="tab6">
-            <SettingsIcon className="size-4" /> Settings
-          </TabsTrigger>
-          <TabsTrigger value="tab7">Log out</TabsTrigger>
+        defaultValue="tab1"
+        className="hidden md:flex min-h-screen bg-lightGray shadow-lg rounded-l-lg">
+        <TabsList className="flex flex-col items-start bg-white shadow-md">
+          {tabs.map((tab) => (
+            <TabsTrigger
+              key={tab.value}
+              value={tab.value}
+              className={twMerge(
+                selectedTab === tab.value &&
+                  "bg-white transition-all duration-300",
+                "w-full flex justify-start gap-1 px-3 py-2 text-lg hover:bg-gray-100 cursor-pointer"
+              )}>
+              {tab.icon && (
+                <span className="mr-2">{React.createElement(tab.icon!)}</span>
+              )}
+              {tab.label}
+            </TabsTrigger>
+          ))}
         </TabsList>
 
-        <div className="bg-white shadow-lg w-full">
-          <TabsContent value="tab1" className="flex-3">
-            <Purchase />
-          </TabsContent>
-          <TabsContent value="tab2" className="flex-3">
-            <Sales />
-          </TabsContent>
-          <TabsContent value="tab3" className="flex-3">
-            <Listing />
-          </TabsContent>
-          <TabsContent value="tab4" className="flex-3">
-            <Likes />
-          </TabsContent>
-          <TabsContent value="tab5" className="flex-3">
-            <span>GoShimmy Bucks</span>
-          </TabsContent>
-          <TabsContent value="tab6" className="flex-3">
-            <Settings />
-          </TabsContent>
+        {/* Tab Content */}
+        <div className="bg-white shadow-lg w-full p-4">
+          {tabs.map((tab) => (
+            <TabsContent key={tab.value} value={tab.value}>
+              {tab.value === "tab1" && <Purchase />}
+              {tab.value === "tab2" && <Sales />}
+              {tab.value === "tab3" && <Listing />}
+              {tab.value === "tab4" && <Likes />}
+              {tab.value === "tab5" && <div>GoShimmy Bucks</div>}
+              {tab.value === "tab6" && <Settings />}
+            </TabsContent>
+          ))}
         </div>
       </Tabs>
 
@@ -97,8 +88,7 @@ const Account = () => {
         {selectedTab === "tab2" && <Sales />}
         {selectedTab === "tab3" && <Listing />}
         {selectedTab === "tab4" && <Likes />}
-        {selectedTab === "tab5" && <div>GoShimmy Bucks</div>}{" "}
-        {/* Add your content here */}
+        {selectedTab === "tab5" && <div>GoShimmy Bucks</div>}
         {selectedTab === "tab6" && <Settings />}
       </div>
     </div>

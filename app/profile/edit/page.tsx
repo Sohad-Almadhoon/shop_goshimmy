@@ -5,12 +5,13 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 
 import { BiUpload } from "react-icons/bi";
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Account from "@/components/profile/edit/account/Account";
 import { BsEye } from "react-icons/bs";
 import Messages from "@/components/profile/edit/messages/Messages";
+import { twMerge } from "tailwind-merge";
 
 interface FormData {
   username: string;
@@ -21,23 +22,46 @@ interface FormData {
 
 const EditProfile = () => {
   const { register, handleSubmit } = useForm<FormData>();
+  const [selectedTab, setSelectedTab] = useState("tab1");
 
+  const handleSelectChange = (value: string) => {
+    setSelectedTab(value);
+  };
   const onSubmit = (data: FormData) => {
     console.log(data);
   };
 
   return (
     <Tabs
+      value={selectedTab}
+      onValueChange={handleSelectChange}
       defaultValue="tab1"
       className="flex justify-center flex-col mt-10 lg:mx-24 mx-3">
       <TabsList className="flex justify-center items-center gap-4">
-        <TabsTrigger value="tab1">My Account</TabsTrigger>
-        <TabsTrigger value="tab2">My Messages</TabsTrigger>
-        <TabsTrigger value="tab3">Edit Profile</TabsTrigger>
-        <TabsTrigger value="tab4" className="font-bold text-primary">
-          <BsEye className="mr-1"/> View Public Profile
-        </TabsTrigger>
+        {[
+          { value: "tab1", label: "My Account" },
+          { value: "tab2", label: "My Messages" },
+          { value: "tab3", label: "Edit Profile" },
+          {
+            value: "tab4",
+            label: "View Public Profile",
+            icon: <BsEye className="mr-1" />,
+          },
+        ].map((tab) => (
+          <TabsTrigger
+            key={tab.value}
+            value={tab.value}
+            onClick={() => setSelectedTab(tab.value)}
+            className={twMerge(
+              "transition-all duration-300 ease-in-out flex items-center",
+              selectedTab === tab.value &&
+                "border-b-4 border-primary"
+            )}>
+            {tab.icon} {tab.label}
+          </TabsTrigger>
+        ))}
       </TabsList>
+
       <TabsContent value="tab1">
         <Account />
       </TabsContent>
