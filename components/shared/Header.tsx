@@ -11,6 +11,7 @@ import {
   DropdownMenuItem,
 } from "@radix-ui/react-dropdown-menu";
 import { profileMenuItems } from "@/helpers/data";
+import { DialogTitle } from "../ui/dialog";
 
 const Header = () => {
   return (
@@ -23,6 +24,9 @@ const Header = () => {
               <BiMenu className="text-primary w-8 h-8 cursor-pointer" />
             </SheetTrigger>
             <SheetContent side="left" className="p-4">
+              <DialogTitle className="sr-only">
+                Mobile Navigation Menu
+              </DialogTitle>
               <nav className="flex flex-col gap-4 text-lg">
                 <Link href="/about">New Arrivals</Link>
                 <Link href="/about">Rehearsal Wear</Link>
