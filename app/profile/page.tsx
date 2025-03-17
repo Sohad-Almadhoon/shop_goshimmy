@@ -30,7 +30,7 @@ const ProfilePage = () => {
           <div className="flex lg:flex-row flex-col lg:gap-10 mt-4">
             {/* Sidebar Filters - Show only in tab1 and tab2 */}
             {activeTab !== "tab3" && (
-              <div className="w-64 flex-shrink-0">
+              <div className="lg:w-64 w-full flex-shrink-0">
                 <Filters />
               </div>
             )}

@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useRef } from "react";
 import {
   Dialog,
   DialogTrigger,
@@ -12,8 +13,13 @@ import { BiX } from "react-icons/bi";
 import { BsStarFill } from "react-icons/bs";
 import { PlusIcon } from "lucide-react";
 import { Button } from "../../../ui/button";
+import { Input } from "@/components/ui/input";
 
 const ReviewDialog = () => {
+  const fileRef = useRef<HTMLInputElement>(null);
+  const handleFileChange = () => {};
+  const handleClick = () => fileRef.current?.click();
+
   return (
     <Dialog>
       <DialogTrigger>
@@ -60,8 +66,18 @@ this seller?"></textarea>
                   <BiX />
                 </span>
               </div>
-              <div className="size-16 bg-lightGray border-dashed border-2 border-bodyLight rounded-lg flex items-center justify-center">
-                <PlusIcon className="text-xl" />
+              <div>
+                <Input
+                  type="file"
+                  className="hidden"
+                  ref={fileRef}
+                  onChange={handleFileChange}
+                />
+                <div
+                  className="size-16 cursor-pointer bg-lightGray border-dashed border-2 border-bodyLight rounded-lg flex items-center justify-center"
+                  onClick={handleClick}>
+                  <PlusIcon className="text-xl" />
+                </div>
               </div>
             </div>
           </div>

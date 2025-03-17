@@ -9,6 +9,7 @@ import AddressDialog from "../dialogs/AddressDialog";
 import CancelMembership from "../dialogs/CancelMembershipDialog";
 import { Toggle } from "@/components/ui/toggle";
 import { Switch } from "@/components/ui/switch";
+import CancelThanksDialog from "../dialogs/CancelThanksDialog";
 
 const Settings = () => {
   return (
@@ -102,6 +103,7 @@ const Settings = () => {
           <p> You can cancel your ensemble subscription any time</p>
           <CancelMembership />
         </div>
+        <CancelThanksDialog />
       </div>
     </div>
   );

@@ -1,5 +1,7 @@
 import {
   AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
   AlertDialogContent,
   AlertDialogDescription,
   AlertDialogFooter,
@@ -7,7 +9,6 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
-import { Button } from "@/components/ui/button";
 import React from "react";
 import { BiTrash } from "react-icons/bi";
 
@@ -28,7 +29,8 @@ const DeleteDialog = () => {
           </AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter className="flex gap-3">
-          <Button variant="outline">Cancel</Button> <Button>Yes, delete</Button>
+          <AlertDialogCancel>Cancel</AlertDialogCancel>
+          <AlertDialogAction>Yes, delete</AlertDialogAction>
         </AlertDialogFooter>
       </AlertDialogContent>
     </AlertDialog>
