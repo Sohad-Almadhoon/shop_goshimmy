@@ -4,14 +4,16 @@ import { BiBell, BiCart, BiMenu } from "react-icons/bi";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import SearchInput from "./SearchInput";
 import { Button } from "../ui/button";
-import {
-  DropdownMenu,
-  DropdownMenuTrigger,
-  DropdownMenuContent,
-  DropdownMenuItem,
-} from "@radix-ui/react-dropdown-menu";
+
 import { profileMenuItems } from "@/helpers/data";
 import { DialogTitle } from "../ui/dialog";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "../ui/dropdown-menu";
+import { IoClose } from "react-icons/io5";
 
 const Header = () => {
   return (
@@ -23,18 +25,18 @@ const Header = () => {
             <SheetTrigger asChild>
               <BiMenu className="text-primary w-8 h-8 cursor-pointer" />
             </SheetTrigger>
-            <SheetContent side="left" className="p-4">
+            <SheetContent side="left" className="p-8">
               <DialogTitle className="sr-only">
                 Mobile Navigation Menu
               </DialogTitle>
-              <nav className="flex flex-col gap-4 text-lg">
+              <nav className="flex flex-col gap-4  font-semibold">
                 <Link href="/about">New Arrivals</Link>
                 <Link href="/about">Rehearsal Wear</Link>
                 <Link href="/about">Costumes</Link>
                 <Link href="/about">Shoes</Link>
                 <Link href="/about">Accessories</Link>
                 <Link href="/about">Shop all</Link>
-                <hr />
+                <hr className="border-b border-gray"/>
                 <Link href="/membership">Ensemble Membership</Link>
                 <Link href="/about">How It Works</Link>
                 <Link href="/payment">
@@ -66,12 +68,26 @@ const Header = () => {
         <div className="flex items-center gap-3">
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <BiBell className="cursor-pointer border-2 border-primary text-primary p-1 rounded-full w-8 h-8" />
+              <div className="relative">
+                <BiBell className="cursor-pointer border-2 border-primary text-primary p-1 rounded-full w-8 h-8" />
+                <span className="size-2 rounded-full bg-primary absolute top-0 right-0"></span>
+              </div>
             </DropdownMenuTrigger>
-            <DropdownMenuContent className="bg-white shadow-lg rounded-md p-2 w-48">
-              <DropdownMenuItem>New Notification 1</DropdownMenuItem>
-              <DropdownMenuItem>New Notification 2</DropdownMenuItem>
-              <DropdownMenuItem>Mark all as read</DropdownMenuItem>
+            <DropdownMenuContent className="bg-white shadow-lg rounded-md p-2 w-64">
+              <div className="flex items-center justify-between border-b px-2 border-gray pb-2 text-primary text-sm">
+                <span>Mark all as read</span>
+                <span> View all messages</span>
+              </div>
+              <DropdownMenuItem className="flex justify-between items-center">
+                {" "}
+                New message from BreeHjaltalin...
+                <IoClose className="text-primary cursor-pointer" />
+              </DropdownMenuItem>{" "}
+              <DropdownMenuItem className="flex justify-between items-center">
+                {" "}
+                New listing sold
+                <IoClose className="text-primary cursor-pointer" />
+              </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
 
@@ -83,7 +99,9 @@ const Header = () => {
                 className="cursor-pointer rounded-full w-8 h-8 object-cover"
               />
             </DropdownMenuTrigger>
-            <DropdownMenuContent className="bg-white shadow-lg rounded-md p-3 w-48">
+            <DropdownMenuContent
+              align="end"
+              className="bg-white shadow-lg rounded-md p-3 w-48">
               <DropdownMenuItem className="font-bold">
                 Jasmine.grammer
               </DropdownMenuItem>

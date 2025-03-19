@@ -11,13 +11,28 @@ import {
   PaginationNext,
   PaginationPrevious,
 } from "../ui/pagination";
+import { Select, SelectTrigger } from "../ui/select";
 
 const Reviews = () => {
   return (
-    <div className="min-h-screen border-t border-gray">
-      {dummyReviews.map((item) => (
-        <Review key={item.id} {...item} />
-      ))}
+    <div className="min-h-screen">
+      <div className="flex justify-end">
+        {" "}
+        <div className="flex md:hidden w-1/2 items-center mb-4 gap-2 justify-end">
+          <p className="flex-2">Sort by</p>
+          <div className="flex-1">
+            {" "}
+            <Select>
+              <SelectTrigger className="w-full">Recent</SelectTrigger>
+            </Select>
+          </div>
+        </div>
+      </div>
+      <div className="border-t border-gray">
+        {dummyReviews.map((item) => (
+          <Review key={item.id} {...item} />
+        ))}
+      </div>
       <div className="lg:flex hidden items-center justify-center my-6 gap-5">
         <Button variant="outline" className="border-gray font-bold">
           See more{" "}
