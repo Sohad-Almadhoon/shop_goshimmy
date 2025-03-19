@@ -28,7 +28,7 @@ const Filters = () => {
   const clearFilters = () => setSelectedFilters({});
 
   return (
-    <>
+    <div>
       {/* Small screen Filters Button */}
       <div className="lg:hidden flex justify-end mb-4">
         <Button
@@ -38,23 +38,30 @@ const Filters = () => {
           Filters (3)
         </Button>
       </div>
-
       {/* Overlay for Filters */}
       {isOpen && (
-        <div className="bg-white p-6 rounded-lg z-50 fixed inset-0 top-20">
-          <button onClick={toggleFilters} className="absolute top-2 right-2">
-            <IoClose className="text-2xl" />
-          </button>
-          <div className="flex items-center gap-3">
+        <div className="p-5 absolute inset-0 z-50 bg-white min-h-screen">
+          <div className="flex items-center gap-3 ">
+            <div className=" absolute top-3 right-3" onClick={toggleFilters}>
+              <IoClose className="text-xl cursor-pointer" />
+            </div>
             <h2 className="text-lg font-bold">Filters by(3)</h2>
             <div onClick={clearFilters} className="text-primary">
               Clear all
             </div>
           </div>
+          <div className="md:hidden flex flex-col my-3">
+            <span className="mb-2">Sort by</span>
+            <Select>
+              <SelectTrigger>Recent</SelectTrigger>
+            </Select>
+          </div>
           <Accordion type="single" collapsible>
             {accordionItems.map(({ id, label, content, isColor, isBrands }) => (
               <AccordionItem value={id} key={id}>
-                <AccordionTrigger>{label}</AccordionTrigger>
+                <AccordionTrigger className="font-bold">
+                  {label}
+                </AccordionTrigger>
                 <AccordionContent>
                   {isBrands ? (
                     <BrandSearch />
@@ -102,15 +109,27 @@ const Filters = () => {
 
       {/* Desktop Filters */}
       <div className="max-w-64 min-w-64 lg:block hidden">
+        <div>
+          <RadioGroup className="space-y-3 border-b border-gray pb-4">
+            <div className="flex items-center space-x-3">
+              <RadioGroupItem value="Rehearsal Wear" />
+              <Label className="mb-0"> Rehearsal Wear</Label>
+            </div>
+            <div className="flex items-center space-x-3">
+              <RadioGroupItem value="Costumes" />
+              <Label className="mb-0"> Costumes</Label>
+            </div>
+          </RadioGroup>
+        </div>
         <Accordion type="single" collapsible>
           {accordionItems.map(({ id, label, content, isColor, isBrands }) => (
             <AccordionItem value={id} key={id}>
-              <AccordionTrigger>{label}</AccordionTrigger>
+              <AccordionTrigger className="font-bold">{label}</AccordionTrigger>
               <AccordionContent>
                 {isBrands ? (
                   <BrandSearch />
                 ) : isColor ? (
-                  <RadioGroup className="grid grid-cols-4 gap-3">
+                  <RadioGroup className="grid grid-cols-4 gap-2">
                     {content.map((color) => (
                       <div
                         key={color}
@@ -134,7 +153,7 @@ const Filters = () => {
                           id={item.id || item}
                           value={item.id || item}
                         />
-                        <Label htmlFor={item.id || item}>
+                        <Label htmlFor={item.id || item} className="mb-0">
                           {item.label || item}
                         </Label>
                       </div>
@@ -146,7 +165,7 @@ const Filters = () => {
           ))}
         </Accordion>
       </div>
-    </>
+    </div>
   );
 };
 

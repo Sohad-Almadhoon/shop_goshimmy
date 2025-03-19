@@ -14,11 +14,11 @@ import {
 
 const Reviews = () => {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen border-t border-gray">
       {dummyReviews.map((item) => (
         <Review key={item.id} {...item} />
       ))}
-      <div className="lg:flex hidden items-center justify-end my-6 gap-5">
+      <div className="lg:flex hidden items-center justify-center my-6 gap-5">
         <Button variant="outline" className="border-gray font-bold">
           See more{" "}
         </Button>

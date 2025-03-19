@@ -1,6 +1,5 @@
 import { BiLogoApple } from "react-icons/bi";
 
-
 export default function Home() {
   return (
     <div>
@@ -59,7 +58,7 @@ export default function Home() {
         </div>
       </section>
       <section className="flex lg:flex-row flex-col">
-        <div className="bg-primaryDark text-white flex-1 lg:pl-24 lg:py-0 p-10 flex justify-center flex-col">
+        <div className="bg-primary text-white flex-1 lg:pl-24 lg:py-0 p-10 flex justify-center flex-col">
           <h4 className="text-2xl font-bold mb-3">Ensemble Membership</h4>
           <p className="text-lightGray text-sm max-w-md w-full leading-relaxed">
             Calling all dance studio owners, directors, and choreographers!
@@ -158,8 +157,15 @@ export default function Home() {
           </p>
         </div>
       </section>
-      <section className="bg-primary_light flex lg:flex-row flex-col lg:h-[250px] my-20 lg:mx-36 mx-10 rounded-lg">
-        <div className="text-white flex-2 p-5 lg:px-24 flex gap-5 flex-col justify-center">
+      <section
+        style={{
+          backgroundImage: "url('/images/mask.png')",
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "bottom right",
+          backgroundSize: "cover",
+        }}
+        className="bg-primary bg-opacity-90 grid md:grid-cols-2 grid-cols-1 h-[400px] lg:h-[300px] my-20 lg:mx-36 mx-10 rounded-lg">
+        <div className="text-white p-5 lg:px-24 flex gap-5 flex-col justify-center items-center">
           <h3 className="text-2xl">Get the app</h3>
           <p className="text-sm">Shop and sell dancewear from anywhere.</p>
           <div className="bg-black px-4 py-1 gap-2 items-center w-fit flex text-white rounded-xl shadow-md ">
@@ -170,11 +176,11 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="flex-1">
+        <div className="flex justify-center items-center h-full">
           <img
-            src="/images/section6.png"
+            src="/images/phones.png"
             alt=""
-            className="h-full w-full object-cover rounded-tr-lg rounded-br-lg"
+            className="object-cover h-full max-w-full"
           />
         </div>
       </section>

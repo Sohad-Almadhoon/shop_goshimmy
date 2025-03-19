@@ -12,6 +12,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Reviews from "@/components/reviews/Reviews";
 import ProfileInfo from "@/components/profile/ProfileInfo";
 import Filters from "@/components/profile/Filters";
+import { twMerge } from "tailwind-merge";
 
 const ProfilePage = () => {
   const [activeTab, setActiveTab] = useState("tab1");
@@ -22,11 +23,39 @@ const ProfilePage = () => {
       <div className="lg:px-36 max-w-screen-2xl w-full mx-auto">
         <Tabs defaultValue="tab1" onValueChange={setActiveTab}>
           <TabsList className="flex justify-center">
-            <TabsTrigger value="tab1">Current List</TabsTrigger>
-            <TabsTrigger value="tab2">Sold Listings</TabsTrigger>
-            <TabsTrigger value="tab3">Reviews (10)</TabsTrigger>
+            <TabsTrigger
+              value="tab1"
+              className={twMerge(
+                activeTab === "tab1" && "border-b-2 border-primary"
+              )}>
+              Current List
+            </TabsTrigger>
+            <TabsTrigger
+              value="tab2"
+              className={twMerge(
+                activeTab === "tab2" && "border-b-2 border-primary"
+              )}>
+              Sold Listings
+            </TabsTrigger>
+            <TabsTrigger
+              value="tab3"
+              className={twMerge(
+                activeTab === "tab3" && "border-b-2 border-primary"
+              )}>
+              Reviews (10)
+            </TabsTrigger>
           </TabsList>
-
+          <div className="md:flex lg:px-0 px-4 hidden">
+            <span className="font-bold basis-4/5">
+              {activeTab !== "tab3" ? "Filters by" : "Reviews"}
+            </span>
+            <div className="flex gap-5 basis-1/5 items-center">
+              <span className=" whitespace-nowrap">Sort by</span>
+              <Select>
+                <SelectTrigger>Recent</SelectTrigger>
+              </Select>
+            </div>
+          </div>
           <div className="flex lg:flex-row flex-col lg:gap-10 mt-4">
             {/* Sidebar Filters - Show only in tab1 and tab2 */}
             {activeTab !== "tab3" && (
@@ -81,22 +110,6 @@ const ProfilePage = () => {
 
               {/* Reviews Section */}
               <TabsContent value="tab3">
-                <div className="flex items-center justify-between mb-4 border-gray border-b-2 pb-2 lg:px-0 px-5">
-                  <span className="font-bold">Reviews</span>
-                  <div className="flex items-center gap-6">
-                    <span className="text-sm whitespace-nowrap font-semibold">
-                      Sort by
-                    </span>
-                    <Select>
-                      <SelectTrigger>
-                        <SelectValue placeholder="Recent" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="recent">Recent</SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </div>
-                </div>
                 {/* Full-width Reviews */}
                 <div className="w-full lg:px-0 px-5">
                   <Reviews />
