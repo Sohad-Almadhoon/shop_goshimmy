@@ -1,51 +1,57 @@
-import { Input } from "@/components/ui/input";
 import { twMerge } from "tailwind-merge";
+import {
+  Command,
+  CommandInput,
+  CommandList,
+  CommandItem,
+} from "@/components/ui/command"; // Assuming you're using Shadcn's Command UI
+import { useEffect, useState } from "react";
+
 interface SearchInputProps {
   placeholder: string;
-  value: string;
-  onChange: (value: string) => void;
   className?: string;
+  options: string[]; // Optional list of search suggestions
 }
+
 export default function SearchInput({
   placeholder,
-  value,
-  onChange,
   className,
+  options,
 }: SearchInputProps) {
+  const [open, setIsOpen] = useState(false);
+  const [value, setValue] = useState("");
+
   return (
-    <div className="flex items-center bg-lightGray rounded-xl px-2.5 py-.5">
-      <SearchIcon className="h-4 w-4 mr-2.5" />
-      <Input
-        type="search"
-        placeholder={placeholder}
-        className={twMerge(
-          "w-full border-0 focus:outline-none shadow-none",
-          className
+    <div className="w-full">
+      <Command>
+        <div className="flex items-center bg-lightGray rounded-lg px-6 transition-all">
+          <CommandInput
+            placeholder={placeholder}
+            value={value}
+            onValueChange={(value) => {
+              setValue(value);
+              if (value) setIsOpen(true);
+              // else
+              //    setIsOpen(false);
+            }}
+            className={twMerge(
+              "w-full focus:outline-none",
+              className
+            )}
+          />
+        </div>
+        {open && ( // Only show the list if there are filtered options
+          <CommandList className="bg-lightGray mt-2">
+            {options.map((option) => (
+              <CommandItem
+                key={option}
+                className="cursor-pointer px-3 py-2 text-dark">
+                {option}
+              </CommandItem>
+            ))}
+          </CommandList>
         )}
-        value={value}
-        onChange={(e) => onChange(e.target.value)}
-      />
+      </Command>
     </div>
-  );
-}
-
-interface SearchIconProps extends React.SVGProps<SVGSVGElement> {}
-
-function SearchIcon(props: SearchIconProps) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round">
-      <circle cx="11" cy="11" r="8" />
-      <path d="m21 21-4.3-4.3" />
-    </svg>
   );
 }

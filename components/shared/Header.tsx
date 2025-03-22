@@ -14,8 +14,14 @@ import {
   DropdownMenuTrigger,
 } from "../ui/dropdown-menu";
 import { IoClose } from "react-icons/io5";
+import { useState } from "react";
 
 const Header = () => {
+    const [searchTerm, setSearchTerm] = useState("");
+
+    const handleSearchChange = (value: string) => {
+      setSearchTerm(value);
+    };
   return (
     <header className="lg:px-24 px-8 py-6">
       <div className="flex justify-between items-center">
@@ -36,7 +42,7 @@ const Header = () => {
                 <Link href="/about">Shoes</Link>
                 <Link href="/about">Accessories</Link>
                 <Link href="/about">Shop all</Link>
-                <hr className="border-b border-gray"/>
+                <hr className="border-b border-gray" />
                 <Link href="/membership">Ensemble Membership</Link>
                 <Link href="/about">How It Works</Link>
                 <Link href="/payment">
@@ -58,9 +64,8 @@ const Header = () => {
         {/* Search Input */}
         <div className="hidden lg:block">
           <SearchInput
-            placeholder="Search"
-            value=""
-            onChange={() => console.log("search")}
+            placeholder="Search messages"
+            options={["Hello", "Hi there", "How are you?", "Good morning"]} // Example options
           />
         </div>
 
