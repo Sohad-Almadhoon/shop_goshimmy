@@ -1,4 +1,3 @@
-"use client";
 import React, { useState } from "react";
 import {
   Accordion,
@@ -14,7 +13,6 @@ import { Button } from "@/components/ui/button";
 import { IoClose } from "react-icons/io5";
 import FilterList from "./FilterList";
 import { useFilters } from "@/contexts/FilterContext";
-
 
 const Filters = () => {
   const { selectedFilters, handleFilterChange, clearFilters } = useFilters();

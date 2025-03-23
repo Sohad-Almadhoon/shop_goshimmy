@@ -1,3 +1,4 @@
+"use client";
 import { useFilters } from "@/contexts/FilterContext";
 import React from "react";
 import { IoClose } from "react-icons/io5";
