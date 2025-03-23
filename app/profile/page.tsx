@@ -57,7 +57,12 @@ const ProfilePage = () => {
             </div>
           </div>
           <div className="flex lg:flex-row flex-col lg:gap-10 mt-4">
-            <Filters />
+            {activeTab !== "tab3" && (
+              <div className=" min-w-64 shrink-0 max-w-64">
+                <Filters />{" "}
+              </div>
+            )}
+
             {/* Main Content Area */}
             <div className="flex-grow">
               <TabsContent value="tab1">

@@ -3,6 +3,7 @@ import { Montserrat } from "next/font/google";
 import "./globals.css";
 import Header from "../components/shared/Header";
 import Footer from "../components/shared/Footer";
+import { FiltersProvider } from "@/contexts/FilterContext";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -21,6 +22,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
+    <FiltersProvider>
       <html lang="en">
         <body className={montserrat.className}>
           <Header />
@@ -28,5 +30,6 @@ export default function RootLayout({
           <Footer />
         </body>
       </html>
+    </FiltersProvider>
   );
 }

@@ -30,8 +30,7 @@ const BrandSearch = () => {
     <Command>
       <SearchInput
         placeholder="Search brands"
-        value={searchQuery}
-        onChange={(value: string) => setSearchQuery(value)}
+        options={brands}
       />
       <CommandList className="rounded-md bg-white mt-2 shadow-md">
         <CommandEmpty>No results found.</CommandEmpty>

@@ -46,7 +46,7 @@ const Footer = () => {
           ))}
         </div>
       </section>
-
+   
       {/* Accordion for small and bold devices */}
       <section className="lg:hidden mx-10 pb-12">
         <Accordion type="multiple" className="[&>div]:border-none">
