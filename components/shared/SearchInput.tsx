@@ -4,8 +4,10 @@ import {
   CommandInput,
   CommandList,
   CommandItem,
+  CommandEmpty,
+  CommandGroup,
 } from "@/components/ui/command"; // Assuming you're using Shadcn's Command UI
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 interface SearchInputProps {
   placeholder: string;
@@ -18,7 +20,6 @@ export default function SearchInput({
   className,
   options,
 }: SearchInputProps) {
-  const [open, setIsOpen] = useState(false);
   const [value, setValue] = useState("");
 
   return (
@@ -26,29 +27,25 @@ export default function SearchInput({
       <Command>
         <div className="flex items-center bg-lightGray rounded-lg px-6 transition-all">
           <CommandInput
+            inputMode="text"
             placeholder={placeholder}
             value={value}
-            onValueChange={(value) => {
-              setValue(value);
-              if (value) setIsOpen(true);
-              // else
-              //    setIsOpen(false);
-            }}
-            className={twMerge(
-              "w-full focus:outline-none",
-              className
-            )}
+            onValueChange={(e) => setValue(e)}
+            className={twMerge("w-full focus:outline-none", className)}
           />
         </div>
-        {open && ( // Only show the list if there are filtered options
+        {value && (
           <CommandList className="bg-lightGray mt-2">
-            {options.map((option) => (
-              <CommandItem
-                key={option}
-                className="cursor-pointer px-3 py-2 text-dark">
-                {option}
-              </CommandItem>
-            ))}
+            <CommandEmpty>No results found</CommandEmpty>
+            <CommandGroup>
+              {options.map((option) => (
+                <CommandItem
+                  key={option}
+                  className="cursor-pointer px-3 py-2 text-dark">
+                  {option}
+                </CommandItem>
+              ))}
+            </CommandGroup>
           </CommandList>
         )}
       </Command>
