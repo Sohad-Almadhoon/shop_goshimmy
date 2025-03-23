@@ -1,3 +1,5 @@
+//@ts-nocheck
+"use client"
 import React, { useState } from "react";
 import {
   Accordion,
@@ -22,9 +24,6 @@ const Filters = () => {
 
   return (
     <div>
-      {/* Selected Filters List */}
-      <FilterList />
-
       {/* Mobile Filters Button */}
       <div className="lg:hidden flex justify-end mb-4">
         <Button

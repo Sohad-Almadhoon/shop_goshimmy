@@ -12,17 +12,15 @@ const FilterList = () => {
       {Object.entries(selectedFilters).map(([key, value]) => (
         <div
           key={key}
-          className="flex items-center bg-gray-300 px-3 py-1 rounded-full">
-          <span className="mr-2 text-sm">{value}</span>
+          className="flex items-center bg-gray-300 px-3 py-2 rounded-xl bg-lightGray">
+          <span className="mr-2 text-sm">{value.toUpperCase()}</span>
           <IoClose
-            className="cursor-pointer text-sm"
+            className="cursor-pointer"
             onClick={() => removeFilter(key)}
           />
         </div>
       ))}
-      <button
-        onClick={clearFilters}
-        className="ml-3 text-sm text-red-600 underline">
+      <button onClick={clearFilters} className="ml-3  text-primary underline">
         Clear All
       </button>
     </div>
