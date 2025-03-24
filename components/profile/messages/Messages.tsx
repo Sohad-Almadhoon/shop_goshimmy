@@ -8,7 +8,7 @@ import Link from "next/link";
 import React, { useState } from "react";
 import { HiArrowRight } from "react-icons/hi2";
 import { twMerge } from "tailwind-merge";
-import DeleteDialog from "../dialogs/DeleteDialog";
+import DeleteDialog from "../account/dialogs/DeleteDialog";
 
 const Messages = () => {
   const [selectedTab, setSelectedTab] = useState("tab1");

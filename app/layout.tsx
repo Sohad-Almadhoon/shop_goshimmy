@@ -5,11 +5,6 @@ import Header from "../components/shared/Header";
 import Footer from "../components/shared/Footer";
 import { FiltersProvider } from "@/contexts/FilterContext";
 
-const montserrat = Montserrat({
-  subsets: ["latin"],
-  weight: ["400", "600", "500", "700", "800"],
-  display: "swap",
-});
 
 export const metadata: Metadata = {
   title: "Go shoppy",
@@ -24,7 +19,7 @@ export default function RootLayout({
   return (
     <FiltersProvider>
       <html lang="en">
-        <body className={montserrat.className}>
+        <body>
           <Header />
           <main>{children}</main>
           <Footer />

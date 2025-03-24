@@ -1,8 +1,7 @@
-import { dummyReviews } from "@/helpers/data";
+;
 import React from "react";
 import Review from "./Review";
 import { Button } from "../ui/button";
-import ReviewDialog from "../profile/edit/dialogs/ReviewDialog";
 import {
   Pagination,
   PaginationContent,
@@ -12,6 +11,7 @@ import {
   PaginationPrevious,
 } from "../ui/pagination";
 import { Select, SelectTrigger } from "../ui/select";
+import { dummyReviews } from "@/helpers/mockData";
 
 const Reviews = () => {
   return (

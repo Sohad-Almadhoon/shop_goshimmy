@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "../../../ui/tabs";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "../../ui/tabs";
 import Purchase from "./Purchase";
 import Sales from "./Sales";
 import Listing from "./Listing";
@@ -14,7 +14,7 @@ import {
   SelectContent,
 } from "@/components/ui/select";
 import { twMerge } from "tailwind-merge";
-import { tabs } from "@/helpers/mockData";
+import { accountTabs } from "@/helpers/constants";
 
 const Account = () => {
   const [selectedTab, setSelectedTab] = useState("tab1");
@@ -32,7 +32,7 @@ const Account = () => {
             <SelectValue placeholder="Select Tab" />
           </SelectTrigger>
           <SelectContent className="bg-white shadow-md rounded-md">
-            {tabs.map((tab) => (
+            {accountTabs.map((tab) => (
               <SelectItem key={tab.value} value={tab.value}>
                 <div className="flex items-center gap-1 p-2">
                   {" "}
@@ -55,7 +55,7 @@ const Account = () => {
         onValueChange={setSelectedTab}
         className="hidden md:flex min-h-screen bg-lightGray shadow-lg rounded-l-lg">
         <TabsList className="flex flex-col items-start pt-5">
-          {tabs.map((tab) => (
+          {accountTabs.map((tab) => (
             <TabsTrigger
               key={tab.value}
               value={tab.value}
@@ -76,7 +76,7 @@ const Account = () => {
 
         {/* Tab Content */}
         <div className="bg-white shadow-lg w-full p-4">
-          {tabs.map((tab) => (
+          {accountTabs.map((tab) => (
             <TabsContent key={tab.value} value={tab.value}>
               {tab.value === "tab1" && <Purchase />}
               {tab.value === "tab2" && <Sales />}

@@ -1,13 +1,14 @@
 import React from "react";
-import { membership, membershipPhotoList } from "../../helpers/data";
+import { membership, membershipPhotoList } from "../../helpers/constants";
 import { BiCheck } from "react-icons/bi";
+import Link from "next/link";
 
 const MembershipPage = () => {
   return (
     <div>
       <div className="grid lg:grid-cols-4 grid-cols-2">
-        {["section2", "section3", "section5", "section6"].map((item) => (
-          <div className="">
+        {["section2", "section3", "section5", "section6"].map((item, index) => (
+          <div key={index}>
             <img src={`/images/${item}.png`} alt="img" className="h-full" />
           </div>
         ))}
@@ -22,8 +23,8 @@ const MembershipPage = () => {
       </h2>
       <section className="lg:mx-56 mx-12 lg:gap-0  gap-5 flex my-12 lg:flex-row flex-col">
         <ul className="flex flex-col gap-3 list-disc flex-1">
-          {membership.map((item) => (
-            <li className="flex">
+          {membership.map((item, index) => (
+            <li className="flex" key={index}>
               <BiCheck className="text-primary w-10 h-7" />
               <div className="flex flex-col">
                 {" "}
@@ -42,10 +43,12 @@ const MembershipPage = () => {
             <span className="text-primary text-3xl font-bold">$11</span>{" "}
             <sup className="text-lg ml-2">a month</sup>
           </p>
-          <span className="bg-primary text-white p-2 px-6 rounded-2xl">
+          <Link
+            href="/register"
+            className="bg-primary text-white p-2 px-6 rounded-2xl">
             {" "}
             Join Ensemble
-          </span>
+          </Link>
         </div>
       </section>
       <section className="font-medium text-opacity-70 bg-gray-50">

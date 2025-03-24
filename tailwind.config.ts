@@ -13,7 +13,8 @@ export default {
 				montserrat: ['Montserrat', 'sans-serif'],
 			},
 			backgroundImage: {
-				"dance-pattern": "url('/images/dance-pattern.jpg')"
+				"dance-pattern": "url('/images/dance-pattern.jpg')",
+				"payment-pattern": "url('/images/payment.png')"
 			},
 			colors: {
 				primary: "#5E6DF1",
@@ -25,7 +26,7 @@ export default {
 				gray: "#D9DBE9",
 				lightGray: "#EFF0F6",
 				white: "#fff",
-				success:"#22c55e"
+				success: "#22c55e"
 			}
 		},
 	},

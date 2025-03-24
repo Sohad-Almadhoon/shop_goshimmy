@@ -1,5 +1,5 @@
 "use client";
-import DeleteDialog from "@/components/profile/edit/dialogs/DeleteDialog";
+import DeleteDialog from "@/components/profile/account/dialogs/DeleteDialog";
 import SearchInput from "@/components/shared/SearchInput";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";

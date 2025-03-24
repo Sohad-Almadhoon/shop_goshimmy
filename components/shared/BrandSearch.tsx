@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/command";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
-import SearchInput from "../shared/SearchInput";
+import SearchInput from "./SearchInput";
 
 const BrandSearch = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -28,10 +28,7 @@ const BrandSearch = () => {
 
   return (
     <Command>
-      <SearchInput
-        placeholder="Search brands"
-        options={brands}
-      />
+      <SearchInput placeholder="Search brands" options={brands} />
       <CommandList className="rounded-md bg-white mt-2 shadow-md">
         <CommandEmpty>No results found.</CommandEmpty>
         {filteredBrands.length > 0 ? (

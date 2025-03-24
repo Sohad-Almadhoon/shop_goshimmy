@@ -10,8 +10,8 @@ import {
 import { Card } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Reviews from "@/components/reviews/Reviews";
-import ProfileInfo from "@/components/profile/ProfileInfo";
-import Filters from "@/components/profile/Filters";
+import ProfileInfo from "@/components/profile/shared/ProfileInfo";
+import Filters from "@/components/shared/Filters";
 import { twMerge } from "tailwind-merge";
 
 const ProfilePage = () => {
@@ -57,11 +57,7 @@ const ProfilePage = () => {
             </div>
           </div>
           <div className="flex lg:flex-row flex-col lg:gap-10 mt-4">
-            {activeTab !== "tab3" && (
-              <div className=" min-w-64 shrink-0 max-w-64">
-                <Filters />{" "}
-              </div>
-            )}
+            {activeTab !== "tab3" && <Filters />}
 
             {/* Main Content Area */}
             <div className="flex-grow">

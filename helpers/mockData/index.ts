@@ -1,6 +1,3 @@
-import { BiLike, BiPurchaseTag, BiSmile, BiSolidAnalyse } from "react-icons/bi";
-import { BsPerson } from "react-icons/bs";
-import { SettingsIcon } from "lucide-react";
 export const listData = {
     item: {
         label: "Item",
@@ -98,15 +95,6 @@ export const purchaseData = {
         data: ["Leave a review", "Leave a review"]
     }
 }
-export const cancelMembership = [
-    "I no longer need 4+ o the same costume or item",
-    "There is not enough selection o Example Listings",
-    "It is too hard to find the costume or item I am looking fo on GoShimmy",
-    "Membership is too confusing",
-    "Membership is too expensive",
-    "Membership doesn't offer enough value",
-    "Other"
-];
 export const messages = [
     {
         img: "/images/palle.jpg",
@@ -206,16 +194,47 @@ export const messages = [
         ],
     },
 ];
-export const tabs = [
-    { value: "tab1", label: "My Purchases", icon: BiPurchaseTag  },
-    { value: "tab2", label: "My Sales", icon: BiSolidAnalyse },
-    { value: "tab3", label: "My Listings", icon: BsPerson  },
-    { value: "tab4", label: "My Likes", icon: BiLike  },
-    { value: "tab5", label: "GoShimmy Bucks", icon: BiSmile  },
+
+export const dummyReviews = [
     {
-        value: "tab6",
-        label: "Settings",
-        icon: SettingsIcon,
+        id: 1,
+        img: '/images/profile.png',
+        username: "Username",
+        stars: 3,
+        createdAt: "Oct 3, 2021",
+        content: `Buyers will receive a refund if their order was not shipped or if it did not arrive at its destination, but the refund must be requested within 90 days of purchase. Buyers will 
+receive a refund if their order was not shipped or if it did not arrive at its destination, but the refund must be requested within 90 days of purchase.`
+        ,
+        images: [
+            "/images/palle.jpg",
+            "/images/palle.jpg",
+            "/images/palle.jpg",
+        ]
     },
-    { value: "tab7", label: "Log out", icon: null },
-];
+    {
+        id: 2,
+        img: '/images/profile.png',
+        username: "Username",
+        stars: 3,
+        createdAt: "Oct 3, 2021",
+        content: `Buyers will receive a refund if their order was not shipped or if it did not arrive at its destination, but the refund must be requested within 90 days of purchase. Buyers will 
+receive a refund if their order was not shipped or if it did not arrive at its destination, but the refund must be requested within 90 days of purchase.`
+
+    },
+    {
+        id: 3,
+        img: '/images/profile.png',
+        username: "Username",
+        stars: 3,
+        createdAt: "Oct 3, 2021",
+        content: `Buyers will receive a refund if their order was not shipped or if it did not arrive at its destination, but the refund must be requested within 90 days of purchase. Buyers will 
+receive a refund if their order was not shipped or if it did not arrive at its destination, but the refund must be requested within 90 days of purchase.`
+        ,
+        images: [
+            "/images/palle.jpg",
+            "/images/palle.jpg",
+            "/images/palle.jpg",
+        ]
+
+    }
+]

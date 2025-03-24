@@ -5,7 +5,7 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import SearchInput from "./SearchInput";
 import { Button } from "../ui/button";
 
-import { profileMenuItems } from "@/helpers/data";
+import { profileMenuItems } from "@/helpers/constants";
 import { DialogTitle } from "../ui/dialog";
 import {
   DropdownMenu,
@@ -17,11 +17,11 @@ import { IoClose } from "react-icons/io5";
 import { useState } from "react";
 
 const Header = () => {
-    const [searchTerm, setSearchTerm] = useState("");
+  const [searchTerm, setSearchTerm] = useState("");
 
-    const handleSearchChange = (value: string) => {
-      setSearchTerm(value);
-    };
+  const handleSearchChange = (value: string) => {
+    setSearchTerm(value);
+  };
   return (
     <header className="lg:px-24 px-8 py-6">
       <div className="flex justify-between items-center">

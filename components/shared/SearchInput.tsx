@@ -29,25 +29,26 @@ export default function SearchInput({
           <CommandInput
             inputMode="text"
             placeholder={placeholder}
-            value={value}
             onValueChange={(e) => setValue(e)}
             className={twMerge("w-full focus:outline-none", className)}
           />
         </div>
-        {value && (
-          <CommandList className="bg-lightGray mt-2">
-            <CommandEmpty>No results found</CommandEmpty>
-            <CommandGroup>
-              {options.map((option) => (
-                <CommandItem
-                  key={option}
-                  className="cursor-pointer px-3 py-2 text-dark">
-                  {option}
-                </CommandItem>
-              ))}
-            </CommandGroup>
-          </CommandList>
-        )}
+        <CommandList className="bg-lightGray mt-2">
+          {value != "" && (
+            <>
+              <CommandEmpty>No results found</CommandEmpty>
+              <CommandGroup>
+                {options.map((option) => (
+                  <CommandItem
+                    key={option}
+                    className="cursor-pointer px-3 py-2 text-dark">
+                    {option}
+                  </CommandItem>
+                ))}
+              </CommandGroup>
+            </>
+          )}
+        </CommandList>
       </Command>
     </div>
   );

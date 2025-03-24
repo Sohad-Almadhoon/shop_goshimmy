@@ -1,3 +1,7 @@
+import { BiLike, BiPurchaseTag, BiSmile, BiSolidAnalyse } from "react-icons/bi";
+import { BsPerson } from "react-icons/bs";
+import { SettingsIcon } from "lucide-react";
+import { BsEye } from "react-icons/bs";
 const membership = [
     {
         title: "Exclusive access to all Ensemble listings ",
@@ -215,47 +219,36 @@ const profileMenuItems = [
     { label: "Settings" },
     { label: "Logout" },
 ];
-
-const dummyReviews = [
-    {   id:1,
-        img: '/images/profile.png',
-        username: "Username",
-        stars: 3,
-        createdAt: "Oct 3, 2021",
-        content: `Buyers will receive a refund if their order was not shipped or if it did not arrive at its destination, but the refund must be requested within 90 days of purchase. Buyers will 
-receive a refund if their order was not shipped or if it did not arrive at its destination, but the refund must be requested within 90 days of purchase.`
-        ,
-        images: [
-            "/images/palle.jpg",
-            "/images/palle.jpg",
-            "/images/palle.jpg",
+const accountTabs = [
+    { value: "tab1", label: "My Purchases", icon: BiPurchaseTag },
+    { value: "tab2", label: "My Sales", icon: BiSolidAnalyse },
+    { value: "tab3", label: "My Listings", icon: BsPerson },
+    { value: "tab4", label: "My Likes", icon: BiLike },
+    { value: "tab5", label: "GoShimmy Bucks", icon: BiSmile },
+    {
+        value: "tab6",
+        label: "Settings",
+        icon: SettingsIcon,
+    },
+    { value: "tab7", label: "Log out", icon: null },
+];
+const cancelMembership = [
+    "I no longer need 4+ o the same costume or item",
+    "There is not enough selection o Example Listings",
+    "It is too hard to find the costume or item I am looking fo on GoShimmy",
+    "Membership is too confusing",
+    "Membership is too expensive",
+    "Membership doesn't offer enough value",
+    "Other"
+];
+const profileTabs=[
+    { value: "tab1", label: "My Account" },
+    { value: "tab2", label: "My Messages" },
+    { value: "tab3", label: "Edit Profile" },
+    {
+        value: "tab4",
+        label: "View Public Profile",
+        icon: BsEye ,
+          },
         ]
-    },
-    {
-        id: 2,
-        img: '/images/profile.png',
-        username: "Username",
-        stars: 3,
-        createdAt: "Oct 3, 2021",
-        content: `Buyers will receive a refund if their order was not shipped or if it did not arrive at its destination, but the refund must be requested within 90 days of purchase. Buyers will 
-receive a refund if their order was not shipped or if it did not arrive at its destination, but the refund must be requested within 90 days of purchase.`
-       
-    },
-    {
-        id: 3,
-        img: '/images/profile.png',
-        username: "Username",
-        stars: 3,
-        createdAt: "Oct 3, 2021",
-        content: `Buyers will receive a refund if their order was not shipped or if it did not arrive at its destination, but the refund must be requested within 90 days of purchase. Buyers will 
-receive a refund if their order was not shipped or if it did not arrive at its destination, but the refund must be requested within 90 days of purchase.`
-        , 
-    images: [
-        "/images/palle.jpg",
-        "/images/palle.jpg",
-        "/images/palle.jpg",
-    ]
-       
-    }
-]
-export { membership, membershipPhotoList, categoryOptions, profileMenuItems, genreOptions, conditionOptions, colorOptions, accordionItems, footerItems, dummyReviews }
+export { membership, membershipPhotoList, categoryOptions, profileMenuItems, genreOptions, conditionOptions, colorOptions, accordionItems, footerItems, accountTabs, cancelMembership, profileTabs }

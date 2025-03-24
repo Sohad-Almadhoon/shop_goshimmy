@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/table";
 import Searchbar from "./Searchbar";
 import { purchaseData } from "@/helpers/mockData";
-import ReviewDialog from "@/components/profile/edit/dialogs/ReviewDialog";
+import ReviewDialog from "@/components/profile/account/dialogs/ReviewDialog";
 
 const Purchase = () => {
   return (

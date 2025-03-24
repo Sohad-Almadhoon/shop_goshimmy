@@ -7,7 +7,7 @@ import {
   DialogHeader,
   DialogTitle,
   DialogDescription,
-} from "../ui/dialog";
+} from "../../ui/dialog";
 import { BiHeart, BiX } from "react-icons/bi";
 
 const Following = () => {

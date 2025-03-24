@@ -28,11 +28,11 @@ const Review: FC<ReviewProps> = ({
           </div>
           <p className="text-xs max-w-sm">{content}</p>
           <div className="flex gap-5 mt-3">
-            {images?.map((img) => (
+            {images?.map((img , index) => (
               <img
                 src={img}
                 className="size-20 rounded-lg"
-                key={img + Math.random()}
+                key={index}
               />
             ))}
           </div>

@@ -1,4 +1,4 @@
-import SalesDetails from "@/components/profile/edit/account/SalesDetails";
+import SalesDetails from "@/components/profile/account/SalesDetails";
 import React from "react";
 
 const page = () => {

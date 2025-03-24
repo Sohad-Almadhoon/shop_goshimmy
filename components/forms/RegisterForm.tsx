@@ -12,8 +12,8 @@ const RegisterForm = () => {
           Log in
         </Link>
       </CardTitle>
-      <hr className="border border-b border-input" />
-      <CardContent>
+      <hr className="border border-b border-gray" />
+      <CardContent className="w-[400px]">
         <h3 className="text-2xl font-semibold mt-4">
           Welcome! We're glad you're here.
         </h3>
@@ -31,7 +31,7 @@ const RegisterForm = () => {
               By creating an account you agree to our{" "}
               <span className="text-primary">terms of service</span>
             </span>
-            <Button>Log in</Button>
+            <Button>Sign up</Button>
           </div>
         </Form>
       </CardContent>

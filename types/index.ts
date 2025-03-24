@@ -7,3 +7,9 @@ export interface ReviewProps {
     content: string;
     images?: string[];
 }
+export interface IEditProfile {
+  username: string;
+  bio: string;
+  instagram: string;
+  tiktok: string;
+}

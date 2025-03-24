@@ -4,12 +4,12 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import React from "react";
 import { BiPlus, BiTrash } from "react-icons/bi";
-import CardDialog from "../dialogs/CardDialog";
-import AddressDialog from "../dialogs/AddressDialog";
-import CancelMembership from "../dialogs/CancelMembershipDialog";
+import CardDialog from "./dialogs/CardDialog";
+import AddressDialog from "./dialogs/AddressDialog";
+import CancelMembership from "./dialogs/CancelMembershipDialog";
 import { Toggle } from "@/components/ui/toggle";
 import { Switch } from "@/components/ui/switch";
-import CancelThanksDialog from "../dialogs/CancelThanksDialog";
+import CancelThanksDialog from "./dialogs/CancelThanksDialog";
 
 const Settings = () => {
   return (

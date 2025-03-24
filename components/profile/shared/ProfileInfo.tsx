@@ -5,7 +5,6 @@ import {
   BsTiktok,
 } from "react-icons/bs";
 import { BiMessage } from "react-icons/bi";
-
 import { Button } from "@/components/ui/button";
 import Following from "./Following";
 import Link from "next/link";
@@ -18,7 +17,7 @@ const ProfileInfo = () => {
         className="w-32 rounded-full object-cover"
       />
       <span className="font-semibold mt-3">First and Last Name</span>
-      {false ? (
+      {true ? (
         <>
           <span className="text-secondary text-sm mb-5">
             12497 following | 862 followers

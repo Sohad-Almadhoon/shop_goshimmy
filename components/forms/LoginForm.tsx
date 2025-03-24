@@ -12,8 +12,8 @@ const LoginForm = () => {
           Sign up
         </Link>
       </CardTitle>
-      <hr className="border border-b border-input" />
-      <CardContent>
+      <hr className="border border-b border-gray" />
+      <CardContent className="w-[450px]">
         <h3 className="text-2xl font-semibold mt-4">Welcome back!</h3>
         <p className="text-sm mb-7">
           In case no one has told you today, you're doing great.
@@ -31,7 +31,7 @@ const LoginForm = () => {
             <div className="flex items-center gap-2">
               <input
                 type="radio"
-                className="bg-input size-6 cursor-pointer block"
+                className="bg-lightGray size-4 cursor-pointer block"
               />
               <span>Remember me</span>
             </div>

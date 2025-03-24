@@ -1,5 +1,5 @@
 //@ts-nocheck
-"use client"
+"use client";
 import React, { useState } from "react";
 import {
   Accordion,
@@ -9,8 +9,8 @@ import {
 } from "@/components/ui/accordion";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
-import { accordionItems } from "@/helpers/data";
-import BrandSearch from "@/components/profile/BrandSearch";
+import { accordionItems } from "@/helpers/constants";
+import BrandSearch from "@/components/shared/BrandSearch";
 import { Button } from "@/components/ui/button";
 import { IoClose } from "react-icons/io5";
 import FilterList from "./FilterList";
@@ -24,15 +24,15 @@ const Filters = () => {
 
   return (
     <div>
-      {/* Mobile Filters Button */}
       <div className="lg:hidden flex justify-end mb-4">
-        <Button
-          onClick={toggleFilters}
-          variant="outline"
-          className="text-base font-bold">
-          Filters ({Object.keys(selectedFilters).length})
-        </Button>
-
+        <div className="flex justify-end w-full bg-black">
+          <Button
+            onClick={toggleFilters}
+            variant="outline"
+            className="text-base font-bold">
+            Filters ({Object.keys(selectedFilters).length})
+          </Button>
+        </div>
         {isOpen && (
           <div className="p-5 absolute inset-0 z-50 bg-white min-h-screen">
             <div className="flex items-center gap-3 mb-4">
@@ -111,7 +111,7 @@ const Filters = () => {
       </div>
 
       {/* Desktop Filters */}
-      <div className="lg:block hidden">
+      <div className="lg:block hidden lg:min-w-64 lg:shrink-0 lg:max-w-64">
         <Accordion type="multiple" className="space-y-4">
           {accordionItems.map(({ id, label, content, isColor, isBrands }) => (
             <AccordionItem key={id} value={label}>
