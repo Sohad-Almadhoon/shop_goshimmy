@@ -66,7 +66,7 @@ const Account = () => {
               )}>
               {tab.icon && (
                 <span className="mr-2">
-                  <tab.icon />
+                  <tab.icon/>
                 </span>
               )}
               {tab.label}

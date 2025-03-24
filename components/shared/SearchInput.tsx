@@ -23,18 +23,17 @@ export default function SearchInput({
   const [value, setValue] = useState("");
 
   return (
-    <div className="w-full">
+    <div className={className}>
       <Command>
         <div className="flex items-center bg-lightGray rounded-lg px-6 transition-all">
           <CommandInput
-            inputMode="text"
             placeholder={placeholder}
             onValueChange={(e) => setValue(e)}
             className={twMerge("w-full focus:outline-none", className)}
           />
         </div>
         <CommandList className="bg-lightGray mt-2">
-          {value != "" && (
+          {value != "" && options.length > 0 && (
             <>
               <CommandEmpty>No results found</CommandEmpty>
               <CommandGroup>

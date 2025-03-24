@@ -24,8 +24,8 @@ const Filters = () => {
 
   return (
     <div>
-      <div className="lg:hidden flex justify-end mb-4">
-        <div className="flex justify-end w-full bg-black">
+      <div className="lg:hidden flex lg:mb-4">
+        <div className="flex justify-end w-full mr-2">
           <Button
             onClick={toggleFilters}
             variant="outline"

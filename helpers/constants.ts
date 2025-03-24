@@ -1,7 +1,7 @@
 import { BiLike, BiPurchaseTag, BiSmile, BiSolidAnalyse } from "react-icons/bi";
 import { BsPerson } from "react-icons/bs";
-import { SettingsIcon } from "lucide-react";
 import { BsEye } from "react-icons/bs";
+import { IoSettings, IoSettingsOutline } from "react-icons/io5";
 const membership = [
     {
         title: "Exclusive access to all Ensemble listings ",
@@ -228,7 +228,7 @@ const accountTabs = [
     {
         value: "tab6",
         label: "Settings",
-        icon: SettingsIcon,
+        icon: IoSettingsOutline,
     },
     { value: "tab7", label: "Log out", icon: null },
 ];

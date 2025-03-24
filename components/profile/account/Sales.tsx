@@ -30,7 +30,7 @@ const Sales = () => {
             {salesData.item.data.map((item, index) => (
               <TableRow
                 key={item.name + index}
-                onClick={() => redirect("/profile/edit/sales")}
+                onClick={() => redirect("/profile/sales")}
                 className=" cursor-pointer">
                 <TableCell className="flex items-center gap-2 text-primary">
                   <img
@@ -52,7 +52,10 @@ const Sales = () => {
       </div>
       <div className="block md:hidden space-y-4 border-t border-gray pt-3">
         {salesData.item.data.map((item, index) => (
-          <div className="flex gap-4 border-b border-gray pb-3" key={index}>
+          <div
+            onClick={() => redirect("/profile/sales")}
+            className="flex cursor-pointer gap-4 border-b border-gray pb-3"
+            key={index}>
             <img
               src={item.img}
               alt={item.name}

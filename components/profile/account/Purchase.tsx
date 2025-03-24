@@ -13,7 +13,7 @@ import ReviewDialog from "@/components/profile/account/dialogs/ReviewDialog";
 
 const Purchase = () => {
   return (
-    <div className="lgpx-10 px-3">
+    <div className="lg:px-10 px-3">
       <Searchbar title="My purchases" />
       <div className="hidden md:block">
         <Table>

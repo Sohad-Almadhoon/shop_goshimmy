@@ -1,5 +1,5 @@
 "use client";
-import BreadcrumbExplore from "@/components/Breadcrumb";
+import BreadcrumbExplore from "@/components/explore/Breadcrumb";
 import FilterList from "@/components/shared/FilterList";
 import Filters from "@/components/shared/Filters";
 import { Card } from "@/components/ui/card";
@@ -11,11 +11,10 @@ const page = () => {
   const [filteredResults, setFilteredResults] = useState(
     new Array(8).fill(null)
   );
-
   return (
-    <div className="lg:px-36 max-w-screen-2xl w-full mx-auto ">
+    <div className="lg:px-36 max-w-screen-2xl w-full mx-auto">
       <div className="flex lg:flex-row flex-col gap-8">
-        <div className="min-w-64 shrink-0 max-w-64">
+        <div className="lg:min-w-64 shrink-0 lg:max-w-64">
           <span className="font-bold mb-4 hidden md:block">Filter by</span>
           <Filters />
         </div>
@@ -33,7 +32,6 @@ const page = () => {
             <FilterList />
           </div>
 
-          {/* ✅ Show message when there are no search results */}
           {filteredResults.length === 0 ? (
             <div className="text-gray-500 py-10 flex flex-col items-center justify-center">
               <BiSearch className="text-7xl text-gray" />

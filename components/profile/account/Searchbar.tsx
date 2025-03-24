@@ -8,8 +8,7 @@ const Searchbar = ({ title }: { title: string }) => {
       <SearchInput
         className="lg:w-52 w-full"
         placeholder=" Search items"
-        onChange={() => {}}
-        value=""
+        options={[]}
       />
     </div>
   );
