@@ -11,7 +11,7 @@ import {
 const Footer = () => {
   return (
     <>
-      <hr className="lg:mx-36 mb-5" />
+      <hr className="lg:mx-36 mb-5 border-t border-gray" />
       <section className="hidden lg:grid lg:mx-36 lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 pb-12">
         <div className="flex flex-col">
           <h3 className="font-bold mb-3">Shop Genres</h3>

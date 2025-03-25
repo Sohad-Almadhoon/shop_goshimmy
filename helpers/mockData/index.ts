@@ -238,3 +238,79 @@ receive a refund if their order was not shipped or if it did not arrive at its d
 
     }
 ]
+export const productInfo = {
+    name: " Girls Halter Leotard",
+    price: 23,
+    user: {
+        username: "Jane Doe",
+        image: "/images/profile.png",
+        review: {
+            stars: 5,
+            number: 10,
+        },
+    },
+    size: "7/8",
+    tagged: "Girls",
+    category: "Leotard",
+    style: "Halter",
+    color: "Black",
+    genre: " Ballet • Jazz • Tap",
+    brand: " Bloch   •   Custom / Semi-Custom / Couture",
+    condition: " Excellent used condition",
+    description:
+        " Super cute halter leotard! Worn a few times but no signs of wear. Sweetheart neckline, fully lined. Ships next day! Thanks for looking.",
+};
+export const recommendedProducts = [
+    {
+        title: "Item 1",
+        image: "/images/palle.jpg",
+        date: " 12/30/20"
+    }, {
+        title: "Item 1",
+        image: "/images/palle.jpg",
+        date: " 12/30/20"
+    }, {
+        title: "Item 1",
+        image: "/images/palle.jpg",
+        date: " 12/30/20"
+    }, {
+        title: "Item 1",
+        image: "/images/palle.jpg",
+        date: " 12/30/20"
+    }, {
+        title: "Item 1",
+        image: "/images/palle.jpg",
+        date: " 12/30/20"
+    }, {
+        title: "Item 1",
+        image: "/images/palle.jpg",
+        date: " 12/30/20"
+    }
+];
+export const soldItems = [
+    {
+        title: "Item 1",
+        image: "/images/palle.jpg",
+        date: " 12/30/20"
+    }, {
+        title: "Item 1",
+        image: "/images/palle.jpg",
+        date: " 12/30/20"
+    }, {
+        title: "Item 1",
+        image: "/images/palle.jpg",
+        date: " 12/30/20"
+    }, {
+        title: "Item 1",
+        image: "/images/palle.jpg",
+        date: " 12/30/20"
+    }, {
+        title: "Item 1",
+        image: "/images/palle.jpg",
+        date: " 12/30/20"
+    }, {
+        title: "Item 1",
+        image: "/images/palle.jpg",
+        date: " 12/30/20"
+    }
+]
