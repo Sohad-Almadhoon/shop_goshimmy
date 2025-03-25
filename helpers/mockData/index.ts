@@ -239,6 +239,11 @@ receive a refund if their order was not shipped or if it did not arrive at its d
     }
 ]
 export const productInfo = {
+    images: [
+        "/images/palle.jpg",
+        "/images/palle.jpg",
+        "/images/palle.jpg",
+    ],
     name: " Girls Halter Leotard",
     price: 23,
     user: {

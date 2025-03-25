@@ -7,6 +7,7 @@ import {
   BreadcrumbPage,
 } from "@/components/ui/breadcrumb";
 import { Button } from "@/components/ui/button";
+import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import { productInfo, recommendedProducts } from "@/helpers/mockData";
 import React from "react";
 import { BiMessage } from "react-icons/bi";
@@ -14,10 +15,10 @@ import { BsHeart, BsStarFill } from "react-icons/bs";
 import { HiShare } from "react-icons/hi2";
 
 const Product = () => {
-  const { user, name, price, ...profuctItem } = productInfo;
+  const { user, name, price, ...productItem } = productInfo;
   return (
-    <div className="px-36">
-      <div className="flex justify-between">
+    <div className="px-4 sm:px-10 lg:px-36">
+      <div className="flex justify-between items-center">
         <Breadcrumb>
           <BreadcrumbList>
             <BreadcrumbItem>
@@ -29,41 +30,58 @@ const Product = () => {
             </BreadcrumbItem>
             <BreadcrumbSeparator className="text-placeholder" />
             <BreadcrumbItem>
-              <BreadcrumbItem>
-                <BreadcrumbLink
-                  href="/"
-                  className="text-primary font-bold text-base">
-                  Explore
-                </BreadcrumbLink>
-              </BreadcrumbItem>
-              <BreadcrumbSeparator className="text-placeholder" />
-              <BreadcrumbItem className="text-primary font-bold text-base">
-                Girls Halter Leotard
-              </BreadcrumbItem>
-
-              <BreadcrumbPage className="flex"></BreadcrumbPage>
+              <BreadcrumbLink
+                href="/explore"
+                className="text-primary font-bold text-base">
+                Explore
+              </BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator className="text-placeholder" />
+            <BreadcrumbItem>
+              <BreadcrumbPage className="text-primary font-bold text-base">
+                {name}
+              </BreadcrumbPage>
             </BreadcrumbItem>
           </BreadcrumbList>
         </Breadcrumb>
-        <div className="flex gap-3 *:font-bold *:px-5 *:py-2">
-          <Button variant="outline">
+        <div className="flex gap-3">
+          <Button
+            variant="outline"
+            className="font-bold px-5 py-2 flex items-center gap-2">
             <BiMessage /> Message Seller
           </Button>
-          <Button variant="outline">
+          <Button
+            variant="outline"
+            className="font-bold px-5 py-2 flex items-center gap-2">
             <BsHeart /> Like
           </Button>
-          <Button variant="outline">
+          <Button
+            variant="outline"
+            className="font-bold px-5 py-2 flex items-center gap-2">
             <HiShare /> Share
           </Button>
         </div>
       </div>
-      <div className="flex pb-20 mt-10">
-        {" "}
-        <div className="flex-1">Slider</div>
+      <div className="flex flex-col md:flex-row pb-20 mt-10 gap-10">
+        <div className="flex-1">
+          <Carousel>
+            <CarouselContent>
+              {productInfo.images.map((image, index) => (
+                <CarouselItem key={index}>
+                  <img
+                    src={image}
+                    alt={`Slide ${index}`}
+                    className="w-full h-auto rounded-lg"
+                  />
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+          </Carousel>
+        </div>
         <div className="flex-1">
           <h3 className="text-2xl font-bold">{name}</h3>
-          <span>${price}</span>
-          <div className="flex gap-3 mt-4">
+          <span className="text-lg font-semibold">${price}</span>
+          <div className="flex gap-3 mt-4 items-center">
             <img
               src={user.image}
               alt={user.username}
@@ -71,33 +89,39 @@ const Product = () => {
             />
             <div className="flex flex-col">
               <span>{user.username}</span>
-              <span className="flex gap-2">
-                <div className="flex gap-1 items-center my-2 mt-1">
+              <div className="flex items-center gap-2">
+                <div className="flex gap-1">
                   {Array.from({ length: user.review.stars }).map((_, index) => (
                     <BsStarFill className="text-success" key={index} />
                   ))}
                 </div>
                 ({user.review.number})
-              </span>
+              </div>
             </div>
           </div>
-          <div className="flex flex-col">
-            {Object.entries(profuctItem).map(([key, value]) => (
-              <div className="flex items-center space-y-2">
-                <span className="flex-1 max-w-36 font-bold">{key}</span>
+          <div className="flex flex-col mt-5">
+            {Object.entries(productItem).map(([key, value]) => (
+              <div key={key} className="flex items-center py-1">
+                <span className="flex-1 max-w-36 font-bold capitalize">
+                  {key.replace(/_/g, " ")}
+                </span>
                 <span className="flex-1">{value}</span>
               </div>
             ))}
           </div>
-          <Button className="text-white mt-5"> Add to Cart</Button>
+          <Button className="text-white mt-5 w-full">Add to Cart</Button>
         </div>
       </div>
       <div className="pb-10">
-        <h3 className="text-lg font-bold mb-3"> Recommended for you</h3>
-        <div className="grid grid-cols-8 gap-5">
-          {recommendedProducts.map((item) => (
-            <div>
-              <img src={item.image} alt="" className=" rounded-lg size-36" />
+        <h3 className="text-lg font-bold mb-3">Recommended for you</h3>
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-5">
+          {recommendedProducts.map((item, index) => (
+            <div key={index}>
+              <img
+                src={item.image}
+                alt={item.title}
+                className="rounded-lg size-36"
+              />
               <div className="mt-2 flex flex-col">
                 <span>{item.title}</span>
                 <span className="text-placeholder">{item.date}</span>
@@ -107,8 +131,7 @@ const Product = () => {
         </div>
       </div>
       <div className="py-5 border-t border-gray">
-        <div className="mb-3 flex gap-5">
-          {" "}
+        <div className="mb-3 flex flex-col md:flex-row gap-5 items-center">
           <h3 className="text-lg font-bold">Other items sold by</h3>
           <div className="flex gap-2 items-center">
             <img
@@ -116,13 +139,17 @@ const Product = () => {
               alt={user.username}
               className="size-8 rounded-full"
             />
-            <span>{user.username}</span>{" "}
+            <span>{user.username}</span>
           </div>
         </div>
-        <div className="grid grid-cols-8 gap-5">
-          {recommendedProducts.map((item) => (
-            <div>
-              <img src={item.image} alt="" className=" rounded-lg size-36" />
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-5">
+          {recommendedProducts.map((item, index) => (
+            <div key={index}>
+              <img
+                src={item.image}
+                alt={item.title}
+                className="rounded-lg size-36"
+              />
               <div className="mt-2 flex flex-col">
                 <span>{item.title}</span>
                 <span className="text-placeholder">{item.date}</span>
